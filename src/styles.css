@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    width:1000px;
+    display:block;
+    margin:auto;
+}
+.tops{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+.desc-exp{
+
+    width: 70%;
+    margin:auto;
+
+}
+.about{
+    width:100%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+.logoemp{
+    width: 200px ;
+    max-width: 100%;
+    display: block;
+    margin:auto;
+    text-align: center;
+
+}
+.Tareas{
+    display: flex;
+    margin-right: 10px;
+}
+.titulo{
+    text-align: center;
+    width:30%;
+    margin-bottom: 15px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.mat-card{
+    border-radius: 32px ;
+    margin-bottom: 40px;
+    padding: 10px;
+
+}
+.col-sm-10{
+    padding-left:0px;
+}
+.fa-solid{
+    margin-left: 50%;
+}
+fa-icon{
+    cursor:pointer;
+}
+#tareas{
+    width:100%;
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 3px ;
+}
+.col-sm-2{
+    display:fluid;
+}
