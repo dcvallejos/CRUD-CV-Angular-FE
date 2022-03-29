@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
-import {Exp} from '../../exp';
+import {Exp} from '../../Interfaces/exp';
 import { EditExperienciaService } from 'src/app/Services/edit-experiencia.service';
 import{Router,ActivatedRoute} from '@angular/router';
 

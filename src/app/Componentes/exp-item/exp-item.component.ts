@@ -1,7 +1,7 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import {faPencil} from '@fortawesome/free-solid-svg-icons';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
-import{Exp} from '../../exp'
+import{Exp} from '../../Interfaces/exp'
 import{UiService} from 'src/app/Services/ui.service'
 
 @Component({

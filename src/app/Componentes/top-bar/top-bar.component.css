@@ -1,4 +1,7 @@
-
+body{
+    background-color: blue;
+    height: 40px;
+}
 .logos{
     margin-left: 20px;
 }
@@ -17,4 +20,7 @@
 }
 #1stcard{
     margin-bottom: 0px;
+}
+.navbar{
+    width: 1000px;
 }

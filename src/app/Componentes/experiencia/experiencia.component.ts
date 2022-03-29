@@ -1,6 +1,6 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
-import{Exp} from '../../exp'
+import{Exp} from '../../Interfaces/exp'
 import{EditExperienciaService} from '../../Services/edit-experiencia.service'
 import{UiService} from 'src/app/Services/ui.service'
 import { Subscription } from 'rxjs';

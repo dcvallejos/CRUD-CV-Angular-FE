@@ -3,6 +3,7 @@
     bottom:80px;
 }
 .carta{
+    width: 1000px;
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
@@ -30,7 +31,8 @@
     text-align: center;
 }
 #about{
-    width:100%;
+    width:85%;
+    text-align: justify;
     border: none;
     resize: none;
     outline: none;

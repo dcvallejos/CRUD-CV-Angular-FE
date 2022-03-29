@@ -1,1 +1,21 @@
-<p>estudios works!</p>
+<body>
+    <div class="card mat-card">
+        <h2 class="titulo">Estudios</h2>
+            <app-est-item 
+                *ngFor="let study of studies"
+                [study] = "study"
+                (onDeleteStudy)="deleteStudy(study)"
+                >
+        </app-est-item>
+        <a title="Edit" href="studyform"> 
+            <fa-icon
+                title="Edit" 
+                class="fa-solid fa-2xl" 
+                [ngStyle] = "{'color':'green'}"
+                [icon]="faPlusCircle"
+                
+            >
+        </fa-icon></a>
+    </div>
+
+</body>
