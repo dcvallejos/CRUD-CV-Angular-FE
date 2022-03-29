@@ -1,0 +1,64 @@
+<div class="form-popup" id="myForm">
+    <form 
+    (ngSubmit)="onSubmit()"
+
+    >
+        <div class="form-control form-control-lg">
+            <label for="puesto">Puesto de trabajo:</label>
+            <input 
+            type="text" 
+            name="puesto" 
+            id="puesto" 
+            placeholder="Agregar puesto de trabajo"
+            [(ngModel)] ="exp!.puesto"
+    
+            >
+        </div>
+        <div class="form-control form-control-lg">    
+            <label for="empresa">Empresa: </label>
+            <input 
+            type="text" 
+            name="empresa" 
+            id="empresa" 
+            placeholder="Agregar empresa"
+            [(ngModel)] ="exp!.empresa"
+            >
+        </div>
+        <div class="form-control form-control-lg">    
+            <label for="logo">Logo empresa: </label>
+            <input 
+            type="text" 
+            name="logo" 
+            id="logo" 
+            placeholder="Agregar link logo"
+            [(ngModel)] ="exp!.logo"
+            >
+        </div>
+        <div class="form-control form-control-lg">    
+            <label for="periodo">Periodo: </label>
+            <input
+            type="text" 
+            name="periodo" 
+            id="periodo" 
+            placeholder="Agregar periodo"
+            [(ngModel)] ="exp!.periodo"
+            >
+        </div>
+        <div class="form-control form-control-lg">    
+            <label for="tareas">Tareas: </label>
+            <textarea 
+            type="text" 
+            name="tareas" 
+            rows="5"
+            maxlength="500"
+            id="tareas" 
+            placeholder="Agregar tareas"
+            [(ngModel)] ="exp!.tareas"
+            ></textarea>
+        </div>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel"  (click)="cancelarBtn()">Close</button>
+        
+    </form>
+    </div>

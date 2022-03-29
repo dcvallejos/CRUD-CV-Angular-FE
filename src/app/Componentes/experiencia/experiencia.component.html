@@ -1,0 +1,21 @@
+<body>
+    <div class="card mat-card">
+        <h2 class="titulo">Experiencia</h2>
+            <app-exp-item 
+                *ngFor="let exp of exps"
+                [exp] = "exp"
+                (onDeleteExp)="deleteExp(exp)"
+                (onEditExp)="editExp(exp)"
+            >
+        </app-exp-item>
+        <a title="Edit" href="form"> 
+            <fa-icon
+                title="Edit" 
+                class="fa-solid fa-2xl" 
+                [ngStyle] = "{'color':'green'}"
+                [icon]="faPlusCircle"
+            >
+        </fa-icon></a>
+    </div>
+
+</body>

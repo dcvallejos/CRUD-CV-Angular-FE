@@ -1,0 +1,20 @@
+{
+  "exps": [
+    {
+      "puesto": "asdasd",
+      "empresa": "asdasd",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "periodo": "asdasd",
+      "tareas": "asdasd",
+      "id": 3
+    },
+    {
+      "puesto": "asd",
+      "empresa": "asd",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "periodo": "asd",
+      "tareas": "asdads",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+.foto{
+    position:relative;
+    bottom:80px;
+}
+.carta{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    border-radius: 32px;
+ 
+    margin-bottom: 40px;
+
+}
+#persona{
+    width:30%;
+    display:block;
+    margin:auto;
+}
+#descripcion{
+    width:70%;
+    margin-top:50px;
+}
+#foto{
+    border-radius:100px;
+    width:150px;
+    display:block;
+    margin:auto;
+}
+.fotodescripcion{
+    text-align: center;
+}
+#about{
+    width:100%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+#1stcard{
+  padding-top:0px  ;
+}
