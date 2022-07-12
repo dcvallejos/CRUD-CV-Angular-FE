@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, FormControl, Validators, UntypedFormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/Interfaces/person';
 import { EditPersonService } from 'src/app/Services/edit-person.service';
@@ -10,14 +10,14 @@ import { EditPersonService } from 'src/app/Services/edit-person.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-form: FormGroup;
+form: UntypedFormGroup;
 user? : User ={}
 userUp!: User[];
 id=2;
 status? : boolean;
 constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private editPerService: EditPersonService
     
   ) {
