@@ -11,7 +11,7 @@ const httpOptions ={
 })
 export class EditExperienciaService {
 
-  private apiUrl = ' https://vast-shore-26100.herokuapp.com/experiencia'
+  private apiUrl = ' http://localhost:3000/exps'
 
   constructor(
     private http:HttpClient,
@@ -21,7 +21,7 @@ export class EditExperienciaService {
     return this.http.get<Exp[]>(this.apiUrl);
   }
   deleteExp(exp: Exp): Observable<Exp>{
-    const url = `${this.apiUrl}/borrar/${exp.id}`
+    const url = `${this.apiUrl}${exp.id}`
     return this.http.delete<Exp>(url);
   }  
   getExp(exp: Exp): Observable<Exp[]>{
@@ -32,7 +32,7 @@ export class EditExperienciaService {
     return this.http.post<Exp>(this.apiUrl,exp);
   }
   editExp(exp: Exp): Observable<Exp>{
-    const url = `${this.apiUrl}/editar/${exp.id}`
+    const url = `${this.apiUrl}${exp.id}`
     return this.http.put<Exp>(url,exp);
   }
 }

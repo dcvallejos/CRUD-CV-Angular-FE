@@ -21,6 +21,7 @@ import { FormStudyComponent } from './Componentes/Forms/form-study/form-study.co
 import { FormPersonComponent } from './Componentes/Forms/form-person/form-person.component';
 import { InicioComponent } from './Componentes/Forms/inicio/inicio.component';
 import { LandingPageComponent } from './Componentes/landing-page/landing-page.component';
+import { SkillsComponent } from './Componentes/skills/skills.component';
 
 
 const routes=[
@@ -49,6 +50,7 @@ const routes=[
     FormStudyComponent,
     FormPersonComponent,
     LandingPageComponent,
+    SkillsComponent,
     
   ],
   imports: [

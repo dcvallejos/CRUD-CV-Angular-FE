@@ -10,7 +10,7 @@ const httpOptions ={
   providedIn: 'root'
 })
 export class EditEstudiosService {
-  private apiUrl = ' https://vast-shore-26100.herokuapp.com/estudio/'
+  private apiUrl = 'http://localhost:3000/study'
   constructor(private http:HttpClient,
     ) { }
   
