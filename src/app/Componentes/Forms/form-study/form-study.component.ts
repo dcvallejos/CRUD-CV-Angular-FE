@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
-import {Study} from '../../Interfaces/study';
+import {Study} from '../../../Interfaces/study';
 import { EditEstudiosService } from 'src/app/Services/edit-estudios.service';
 import{Router,ActivatedRoute} from '@angular/router';
 
@@ -19,7 +19,7 @@ export class FormStudyComponent implements OnInit {
   id:any;
   editing:boolean=false;  
   studyUp!: Study[];
-
+  status? : boolean;
   
   
   constructor(
@@ -27,15 +27,23 @@ export class FormStudyComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
     ) {
+      if(window.localStorage.getItem('statusquo')){
+        this.status = true;
+
+      }
+      else{ 
+        this.status = false;
+        alert("Acceso denegado, iniciar sesion")
+        this.router.navigateByUrl('')
+      }      
       this.id = this.activatedRoute.snapshot.params['id']
-      console.log(this.id)
       if(this.id){
         this.editing = true;
         this.EditEstudiosService.getStudies()
         .subscribe((data:Study[]) =>{
           this.studyUp = data;
           this.study = this.studyUp.find((m)=>{return m.id==this.id})
-          console.log(this.study)})
+          })
           }
           else{
             this.editing=false;
@@ -50,19 +58,19 @@ export class FormStudyComponent implements OnInit {
     }
     if(this.editing){
       this.EditEstudiosService.editStudy(this.study!).subscribe((data)=>{
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('home');
         alert("Producto actualizado")
       })
     } 
     else{
     this.EditEstudiosService.addStudy(this.study!)
     .subscribe(() => {
-      this.router.navigateByUrl('')
+      this.router.navigateByUrl('home')
       alert('Producto guardado')})
     }
   }
   cancelarBtn(){;
-    this.router.navigateByUrl('')
+    this.router.navigateByUrl('home')
   }
 
 

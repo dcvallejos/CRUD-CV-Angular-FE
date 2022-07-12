@@ -37,6 +37,11 @@
     resize: none;
     outline: none;
 }
-#1stcard{
-  padding-top:0px  ;
+
+
+.banner{
+    width:100%;
+    height:250px;
+    border-bottom-right-radius:32px;
+    border-bottom-left-radius:32px;
 }

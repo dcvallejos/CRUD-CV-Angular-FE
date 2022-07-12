@@ -1,0 +1,55 @@
+<div class="form-popup" id="myForm">
+    <form 
+    (ngSubmit)="onSubmit()"
+
+    >
+        <div class="form-control form-control-lg">
+            <label for="puesto">Nombre completo:</label>
+            <input 
+            type="text" 
+            name="nombre" 
+            id="nombre" 
+            placeholder="Ingresar nombres y apellidos completos"
+            [(ngModel)] ="user!.nombre"
+    
+            >
+        </div>
+        <div class="form-control form-control-lg">    
+            <label for="empresa">Puesto actual / titulo: </label>
+            <input 
+            type="text" 
+            name="titulo" 
+            id="titulo" 
+            placeholder="Inclui aquello con lo que te identifiques"
+            [(ngModel)] ="user!.titulo"
+            >
+        </div>
+        <div class="form-control form-control-lg">    
+            <label for="logo">Foto: </label>
+            <input 
+            type="text" 
+            name="foto" 
+            id="foto" 
+            placeholder="Agregar el link de tu foto"
+            [(ngModel)] ="user!.foto"
+            >
+        </div>
+
+        <div class="form-control form-control-lg">    
+            <label for="tareas">Sobre ti:  </label>
+            <textarea 
+            type="text" 
+            name="about" 
+            rows="5"
+            maxlength="500"
+            class="about" 
+            placeholder="Resumi aqui una pequeña descripcion sobre vos"
+            [(ngModel)] ="user!.about"
+            ></textarea>
+        </div>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel"  (click)="cancelarBtn()">Close</button>
+        
+    </form>
+    </div>

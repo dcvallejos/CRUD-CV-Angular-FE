@@ -4,34 +4,34 @@
 
     >
         <div class="form-control form-control-lg">
-            <label for="puesto">Puesto de trabajo:</label>
+            <label for="titulo">Titulo:</label>
             <input 
             type="text" 
-            name="puesto" 
-            id="puesto" 
-            placeholder="Agregar puesto de trabajo"
-            [(ngModel)] ="exp!.puesto"
+            name="titulo" 
+            id="titulo" 
+            placeholder="Agregar Titulo"
+            [(ngModel)] ="study!.titulo"
     
             >
         </div>
         <div class="form-control form-control-lg">    
-            <label for="empresa">Empresa: </label>
+            <label for="institucion">Institucion: </label>
             <input 
             type="text" 
-            name="empresa" 
-            id="empresa" 
-            placeholder="Agregar empresa"
-            [(ngModel)] ="exp!.empresa"
+            name="institucion" 
+            id="institucion" 
+            placeholder="Agregar institucion"
+            [(ngModel)] ="study!.institucion"
             >
         </div>
         <div class="form-control form-control-lg">    
-            <label for="logo">Logo empresa: </label>
+            <label for="logo">Logo institucion: </label>
             <input 
             type="text" 
             name="logo" 
             id="logo" 
             placeholder="Agregar link logo"
-            [(ngModel)] ="exp!.logo"
+            [(ngModel)] ="study!.logo"
             >
         </div>
         <div class="form-control form-control-lg">    
@@ -41,19 +41,19 @@
             name="periodo" 
             id="periodo" 
             placeholder="Agregar periodo"
-            [(ngModel)] ="exp!.periodo"
+            [(ngModel)] ="study!.periodo"
             >
         </div>
         <div class="form-control form-control-lg">    
-            <label for="tareas">Tareas: </label>
+            <label for="detalles">Detalles: </label>
             <textarea 
             type="text" 
-            name="tareas" 
+            name="detalles" 
             rows="5"
             maxlength="500"
-            id="tareas" 
-            placeholder="Agregar tareas"
-            [(ngModel)] ="exp!.tareas"
+            class="about" 
+            placeholder="Agregar detalles"
+            [(ngModel)] ="study!.detalles"
             ></textarea>
         </div>
     

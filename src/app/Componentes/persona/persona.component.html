@@ -1,11 +1,18 @@
 <div class="carta card" id="1stcard">
-    <img src="https://nimblesol.com/images/itservicesur.jpg" alt="">
+        <img 
+            class="banner" 
+            src="https://img.lovepik.com/background/20211022/large/lovepik-blue-cool-technology-background-image_500700456.jpg" 
+            alt=""
+        >
     <div id="persona">
         <div class="foto">
-        <img id="foto" class="img-thumbnail"src="https://media-exp1.licdn.com/dms/image/C4E03AQFtBk2_Qug1DA/profile-displayphoto-shrink_200_200/0/1601244586807?e=2147483647&v=beta&t=rtiGUawSDcMh7_kLYITnNS5cyKrksQe1GW59v8yhay0" alt="">
+        <img 
+            id="foto" 
+            class="img-thumbnail"
+            [src]="person?.foto" alt="">
         <div >
-            <h2 class="fotodescripcion">Daniel Vallejos</h2> 
-            <h6 class="fotodescripcion">Desarrollador Full Stack Jr.</h6>
+            <h2 class="fotodescripcion">{{person?.nombre}}</h2> 
+            <h6 class="fotodescripcion">{{person?.titulo}}</h6>
         </div>
     </div>
     </div>
@@ -19,6 +26,7 @@
                     <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
+                         routerLink="/personform"
                          >
                          </fa-icon></a>
                 </div>
@@ -28,5 +36,5 @@
         readonly id="about" 
         title="sobre mi" 
         maxlength="250"
-        rows="4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias neque delectus accusamus. Inventore voluptas ab possimus minima eveniet? Perferendis voluptas eius ex possimus porro, est laborum beatae nemo nobis incidunt!</textarea>
+        rows="4">{{person?.about}}</textarea>
     </div>

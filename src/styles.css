@@ -60,7 +60,7 @@ ul {
 fa-icon{
     cursor:pointer;
 }
-#tareas{
+.about{
     width:100%;
     border: none;
     resize: none;

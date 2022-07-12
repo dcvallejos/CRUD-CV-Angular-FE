@@ -14,7 +14,8 @@
         <a href="#" title="RS">
             <img class="logos" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"alt="" width="36">
         </a>
-        <button class="btn btn-primary">Iniciar sesion</button>
+        <button class="btn btn-primary">Bienvenido {{user?.nombre}}</button>
+        <button (click)="exit()" class="btn btn-danger">Cerrar Sesion</button>
     </div>    
 </nav>
 

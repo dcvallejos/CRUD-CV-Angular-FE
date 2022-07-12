@@ -1,30 +1,35 @@
 {
+  "user": [
+    {
+      "id": 1,
+      "email": "daniel@yoprogramo.com",
+      "password": "123456",
+      "nombre": "Daniel Carlos Vallejos",
+      "titulo": "Programador Fullstack nivel corcho",
+      "about": "Soy un programador que tambien es utilizable para tapar botellas de vino con sus equiparables capacidades de programacion",
+      "foto": "https://media-exp1.licdn.com/dms/image/C4E03AQFtBk2_Qug1DA/profile-displayphoto-shrink_200_200/0/1601244586807?e=2147483647&v=beta&t=rtiGUawSDcMh7_kLYITnNS5cyKrksQe1GW59v8yhay0",
+      "status": false
+    }
+  ],
   "exps": [
     {
-      "puesto": "asdasd",
-      "empresa": "asdasd",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "periodo": "asdasd",
-      "tareas": "asdasd",
-      "id": 3
+      "puesto": "Administrativo",
+      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
+      "empresa": "HONEYWELL",
+      "periodo": "2020-2021",
+      "tareas": "Hice laburo de logistica",
+      "id": 1
     },
     {
-      "puesto": "asd",
-      "empresa": "asd",
+      "puesto": "Administrativo",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "empresa": "asdasd",
       "periodo": "asd",
-      "tareas": "asdads",
-      "id": 4
+      "tareas": "dfhstagaggfads",
+      "id": 2
     }
   ],
   "study": [
-    {
-      "id": 1,
-      "institucion": "Universidad de Buenos Aires",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "titulo": "Lic. en Psicologia",
-      "periodo": "2000-2010"
-    },
     {
       "id": 2,
       "institucion": "Escuela tecnica n7",

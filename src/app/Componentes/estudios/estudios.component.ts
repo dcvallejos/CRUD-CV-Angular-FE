@@ -2,7 +2,6 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Study} from '../../Interfaces/study'
 import{EditEstudiosService} from '../../Services/edit-estudios.service'
-import{UiService} from 'src/app/Services/ui.service'
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -18,7 +17,7 @@ export class EstudiosComponent implements OnInit {
   constructor
   (
     private EditEstudiosService: EditEstudiosService,
-    private UiService: UiService
+    
     ) 
   {}
      ngOnInit(): void {

@@ -1,8 +1,7 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import {faPencil} from '@fortawesome/free-solid-svg-icons';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
-import{Exp} from '../../Interfaces/exp'
-import{UiService} from 'src/app/Services/ui.service'
+import{Exp} from '../../../Interfaces/exp'
 
 @Component({
   selector: 'app-exp-item',
@@ -15,7 +14,7 @@ export class ExpItemComponent implements OnInit {
   @Input() exp!: Exp;
   @Output() onDeleteExp: EventEmitter<Exp> = new EventEmitter();
   @Output() onEditExp: EventEmitter<Exp> = new EventEmitter();
-  constructor(   private UiService: UiService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

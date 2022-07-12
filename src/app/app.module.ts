@@ -8,24 +8,30 @@ import { TopBarComponent } from './Componentes/top-bar/top-bar.component';
 import { PersonaComponent } from './Componentes/persona/persona.component';
 import { ExperienciaComponent } from './Componentes/experiencia/experiencia.component';
 import { EstudiosComponent } from './Componentes/estudios/estudios.component';
-import { EstItemComponent } from './Componentes/est-item/est-item.component';
+import { EstItemComponent } from './Componentes/estudios/est-item/est-item.component';
 
-import { FormExpComponent } from './Componentes/form-exp/form-exp.component';
+import { FormExpComponent } from './Componentes/Forms/form-exp/form-exp.component';
 import{ FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ExpItemComponent } from './Componentes/exp-item/exp-item.component';
+import { ExpItemComponent } from './Componentes/experiencia/exp-item/exp-item.component';
 import { HomeComponent } from './home/home.component';
-import { FormStudyComponent } from './Componentes/form-study/form-study.component';
+import { FormStudyComponent } from './Componentes/Forms/form-study/form-study.component';
+import { FormPersonComponent } from './Componentes/Forms/form-person/form-person.component';
+import { InicioComponent } from './Componentes/Forms/inicio/inicio.component';
+import { LandingPageComponent } from './Componentes/landing-page/landing-page.component';
 
 
 const routes=[
-  {path: '', component: HomeComponent},
+  {path: '', component: LandingPageComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'form', component: FormExpComponent},
   {path: 'form/:id', component: FormExpComponent},
   {path: 'studyform', component: FormStudyComponent},
-  {path: 'studyform/:id', component: FormStudyComponent}
+  {path: 'studyform/:id', component: FormStudyComponent},
+  {path: 'sessionform', component: InicioComponent},
+  {path: 'personform', component: FormPersonComponent}
 
 ]
 @NgModule({
@@ -39,16 +45,21 @@ const routes=[
     ExpItemComponent,
     EstItemComponent,
     HomeComponent,
-    FormStudyComponent
+    InicioComponent,
+    FormStudyComponent,
+    FormPersonComponent,
+    LandingPageComponent,
+    
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
