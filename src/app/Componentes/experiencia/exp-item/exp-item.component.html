@@ -1,6 +1,6 @@
 
     <div class="tops">
-        <div >
+        <div class="espacio">
             <img
             class="logoemp"
             [src]="exp.logo" 
@@ -9,10 +9,10 @@
         <div  class="desc-exp">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-10">
+                    <div class="col-8">
                         <h4>{{exp.puesto}}</h4>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-4">
                         <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <h6>{{exp.empresa}}</h6>
-            <p>{{exp.periodo}}</p>
+            <p>{{exp.periodo| date: 'MM/yyyy'}}</p>
             <textarea 
             readonly class="about" 
             title="sobre mi" 

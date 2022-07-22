@@ -21,7 +21,7 @@ export class EstudiosComponent implements OnInit {
     ) 
   {}
      ngOnInit(): void {
-    this.EditEstudiosService.getStudies().subscribe((studies) =>{
+    this.EditEstudiosService.getStudies().subscribe((studies: Study[]) =>{
       this.studies = studies;
     });
   }
@@ -37,7 +37,7 @@ export class EstudiosComponent implements OnInit {
   }
  
   addStudy(study:Study){
-    this.EditEstudiosService.addStudy(study).subscribe((study) =>{
+    this.EditEstudiosService.addStudy(study).subscribe((study: Study) =>{
       this.studies.push(study);
     })
   }

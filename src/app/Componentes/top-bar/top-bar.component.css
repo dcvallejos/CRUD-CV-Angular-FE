@@ -1,6 +1,6 @@
 body{
     background-color: blue;
-    height: 40px;
+    max-height: 40px;
 }
 .logos{
     margin-left: 20px;
@@ -20,5 +20,6 @@ body{
 }
 
 .navbar{
-    width: 1000px;
+    max-width:900px;
+    min-width: 706px;
 }

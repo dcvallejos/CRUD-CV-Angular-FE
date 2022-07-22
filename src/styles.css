@@ -1,44 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+.navbar{
+    min-width: 150px !important;
+    z-index: 1;
+}
+.container{
+    max-width: 60rem;
+}
+.row{
+    display:flex;
+}
 body{
-    width:1000px;
+    flex-wrap: wrap;
+    min-width: 200px;
     display:block;
     margin:auto;
+    flex:1;
+    max-width: 900px;
 }
+.carta{
+    min-width: 200px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    border-radius: 32px;
+ 
+    margin-bottom: 40px;
+
+}
+
 .tops{
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
+    margin-bottom:15px;
 }
 .desc-exp{
 
     width: 70%;
-    margin:auto;
+    margin-left:auto;
+    margin-right:12px;
 
 }
-.about{
-    width:100%;
-    border: none;
-    resize: none;
-    outline: none;
-}
+
 .logoemp{
-    width: 200px ;
-    max-width: 100%;
-    display: block;
+    width:100%;
+    min-width: 30px;
+    padding-left: 10px;
     margin:auto;
-    text-align: center;
-
 }
+
+.espacio{
+    max-width:20%;
+    display: fluid;
+    max-height: 25%;
+}
+
 .Tareas{
     display: flex;
     margin-right: 10px;
+
 }
-.titulo{
-    text-align: center;
-    width:30%;
-    margin-bottom: 15px;
-}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -51,9 +74,16 @@ ul {
     padding: 10px;
 
 }
-.col-sm-10{
+.col-8{
     padding-left:0px;
+    min-width: 70px;
+    
 }
+.plusCirclediv{
+    text-align: center;
+    padding: 10px;
+}
+
 .fa-solid{
     margin-left: 50%;
 }
@@ -61,12 +91,152 @@ fa-icon{
     cursor:pointer;
 }
 .about{
-    width:100%;
+    width:90%;
     border: none;
     resize: none;
     outline: none;
     padding: 3px ;
 }
-.col-sm-2{
+.col-2{
     display:fluid;
 }
+.foto{
+    position:relative;
+    bottom:80px;
+}
+
+#persona{
+    width:100%;
+    display:flex;
+    margin:auto;
+}
+#descripcion{
+    width:70%;
+    margin-top:50px;
+    padding-left:15px;
+}
+#foto{
+    border-radius:100px;
+    width:150px;
+    display:block;
+    margin:auto;
+}
+.fotodescripcion{
+    text-align: center;
+    margin: 0 10px 0 10px;
+
+}
+#about{
+    width:85%;
+    text-align: justify;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.lapizperson{
+    padding-right:32px;
+}
+.banner{
+    width:100%;
+    min-height:25px;
+    border-bottom-right-radius:32px;
+    border-bottom-left-radius:32px;
+}
+
+
+.titulo{
+    padding:15px;
+}
+
+.col-4{
+   
+    text-align: right;
+ 
+}
+
+.skillcontainer{
+display: grid;  
+grid-template-columns: repeat(auto-fill, minmax(12rem,1fr));
+gap:5px;
+grid-auto-rows:8rem;
+}
+
+.tituloNedit{
+    display:flex;
+}
+.lapicito{
+    margin-left:auto;
+    padding-right:15px;
+    align-items:center;
+    display:flex;
+
+}
+
+
+/*ESTILOS DE FORMS*/
+
+.forma{
+    padding-top:50px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formaitems{
+    display: flex;
+    
+}
+
+.cross{
+    display:flex;
+    align-items:center;
+    padding:15px;
+}
+.btn-div{
+    text-align: center;
+    
+}
+.btn-form{
+    margin: 15px;
+    padding: 10px 25px 10px 25px;
+    border-radius: 15px;
+}
+
+
+
+label { 
+    display: table-cell;
+    
+     
+}
+input { 
+    display: table-cell; 
+    width: 100%; 
+}
+form .btn {
+
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.8;
+  }
+  
+  .myForm{
+    display:flex;
+  }
+.inicio-btn-div{
+    text-align:center;
+}
+
+.mb-4{
+    text-align:center;
+    max-width: 250px;
+    min-width:100px;
+}
+.session-form {
+    min-width: 200px;
+}
+

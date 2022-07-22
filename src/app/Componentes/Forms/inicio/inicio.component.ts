@@ -13,7 +13,7 @@ export class InicioComponent implements OnInit {
 form: UntypedFormGroup;
 user? : User ={}
 userUp!: User[];
-id=2;
+id=1;
 status? : boolean;
 constructor(
     private router: Router,

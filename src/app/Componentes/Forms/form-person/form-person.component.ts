@@ -47,7 +47,7 @@ export class FormPersonComponent implements OnInit {
       this.user.foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
     }
     /*if(this.editing){*/
-      this.editPerService.editUser(this.user!).subscribe((data)=>{
+      this.editPerService.editUser(this.user!).subscribe(()=>{
         this.router.navigateByUrl('home');
         alert("Usuario actualizado")
       })

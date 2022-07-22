@@ -15,7 +15,7 @@ export class FormExpComponent implements OnInit {
     puesto:"",
     logo:"",
     empresa:"",
-    periodo:"",
+    periodo:null!,
     tareas:""};
   id:any;
   editing:boolean=false;  
@@ -59,7 +59,7 @@ export class FormExpComponent implements OnInit {
       this.exp.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
     }
     if(this.editing){
-      this.editExpService.editExp(this.exp!).subscribe((data)=>{
+      this.editExpService.editExp(this.exp!).subscribe(()=>{
         this.router.navigateByUrl('home');
         alert("Producto actualizado")
       })

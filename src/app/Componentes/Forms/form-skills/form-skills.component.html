@@ -1,0 +1,31 @@
+    <form 
+    class="myForm forma" 
+    (ngSubmit)="onSubmit()">
+    
+        <div class=""
+
+        >
+        <app-form-skill-item
+        *ngFor="let skill of skills"
+        [skill]="skill"
+        (onDeleteSkill)="onDelete(skill)"
+        >
+        </app-form-skill-item>
+        
+        </div>
+    <div class="btn-div"><button class="btn-form btn-success" type="submit" title="submit">Guardar</button>
+        <button class="btn-form btn-danger" type="button" (click)="cancelarBtn()" title="submit">Cancelar</button></div>
+        
+    </form>
+    
+
+<div class="plusCirclediv">
+    <fa-icon
+    title="Edit" 
+    class="circle fa-2xl" 
+    [ngStyle] = "{'color':'green'}"
+    [icon]="faPlusCircle"
+    (click) = "onNew(skill)"
+>
+</fa-icon>
+</div>

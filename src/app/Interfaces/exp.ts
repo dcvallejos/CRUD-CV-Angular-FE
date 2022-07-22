@@ -3,6 +3,6 @@ export interface Exp{
     puesto: string;
     logo:string;
     empresa: string;
-    periodo: string;
+    periodo: number;
     tareas: string;
     }

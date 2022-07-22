@@ -3,7 +3,7 @@ export interface Study{
         institucion: string;
         logo: string;
         titulo: string;
-        periodo: string;   
+        periodo: number;   
         detalles: string;         
     
     }

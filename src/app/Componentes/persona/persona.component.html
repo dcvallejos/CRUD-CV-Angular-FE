@@ -1,28 +1,31 @@
 <div class="carta card" id="1stcard">
-        <img 
-            class="banner" 
-            src="https://img.lovepik.com/background/20211022/large/lovepik-blue-cool-technology-background-image_500700456.jpg" 
-            alt=""
-        >
-    <div id="persona">
+    <img 
+    class="banner img-fluid" 
+    src="https://img.lovepik.com/background/20211022/large/lovepik-blue-cool-technology-background-image_500700456.jpg" 
+    alt=""
+>
+        <div id="persona">
+
         <div class="foto">
-        <img 
-            id="foto" 
-            class="img-thumbnail"
-            [src]="person?.foto" alt="">
-        <div >
-            <h2 class="fotodescripcion">{{person?.nombre}}</h2> 
-            <h6 class="fotodescripcion">{{person?.titulo}}</h6>
+            <img 
+                id="foto" 
+                class="img-thumbnail"
+                [src]="person?.foto" alt="">
+        
+        
+        <div class="fotodescripcion" >
+            <h2 >{{person?.nombre}}</h2> 
+            <h6 >{{person?.titulo}}</h6>
         </div>
     </div>
-    </div>
+    
     <div id="descripcion">
         <div class="container">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-8 ">
                     <h3>Sobre mi</h3>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-4 lapizperson">
                     <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
@@ -38,3 +41,4 @@
         maxlength="250"
         rows="4">{{person?.about}}</textarea>
     </div>
+</div>

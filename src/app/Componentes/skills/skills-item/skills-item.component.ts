@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit,Input} from '@angular/core';
+import { Skill } from 'src/app/Interfaces/skill';
+
 
 @Component({
   selector: 'app-skills-item',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills-item.component.css']
 })
 export class SkillsItemComponent implements OnInit {
+  @Input() skill!: Skill;
 
-  constructor() { }
+  constructor() {  }
 
   ngOnInit(): void {
   }
+
 
 }

@@ -29,7 +29,7 @@
             <input 
             type="text" 
             name="foto" 
-            id="foto" 
+            id="fotografia" 
             placeholder="Agregar el link de tu foto"
             [(ngModel)] ="user!.foto"
             >
@@ -48,8 +48,8 @@
             ></textarea>
         </div>
     
-        <button type="submit" class="btn">Login</button>
-        <button type="button" class="btn cancel"  (click)="cancelarBtn()">Close</button>
+        <div class="btn-div"><button type="submit" class="btn-form btn-success">Aceptar</button>
+        <button type="button" class="btn-form btn-danger"  (click)="cancelarBtn()">Cancelar</button></div>
         
     </form>
     </div>

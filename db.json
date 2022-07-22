@@ -1,4 +1,31 @@
 {
+  "skill": [
+    {
+      "id": 1,
+      "nombre": "Daniel Carlos Vallejos",
+      "puntaje": 7
+    },
+    {
+      "nombre": "Habilidades ",
+      "puntaje": 5,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Habilidades ",
+      "puntaje": 6
+    },
+    {
+      "nombre": "Empathy",
+      "puntaje": 7,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "nombre": "Empathy",
+      "puntaje": 3
+    }
+  ],
   "user": [
     {
       "id": 1,
@@ -16,34 +43,35 @@
       "puesto": "Administrativo",
       "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
       "empresa": "HONEYWELL",
-      "periodo": "2020-2021",
-      "tareas": "Hice laburo de logistica",
+      "periodo": "2022-07-23",
+      "tareas": "Hice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logis",
       "id": 1
     },
     {
       "puesto": "Administrativo",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
       "empresa": "asdasd",
-      "periodo": "asd",
+      "periodo": "2022-07-20",
       "tareas": "dfhstagaggfads",
       "id": 2
     }
   ],
   "study": [
     {
-      "id": 2,
-      "institucion": "Escuela tecnica n7",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "titulo": "Tecnico en mantenimiento de avionica",
-      "periodo": "2000-2010"
-    },
-    {
       "titulo": "adsasdasdasd",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
       "institucion": "asdadsad",
-      "periodo": "asdads",
-      "detalles": "",
+      "periodo": "2022-07-13",
+      "detalles": "dsgfsdfgsdg",
       "id": 3
+    },
+    {
+      "titulo": "asd",
+      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
+      "institucion": "asdadsadsa",
+      "periodo": "2022-07-16",
+      "detalles": "asdsadas",
+      "id": 4
     }
   ]
 }

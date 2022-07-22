@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import{ RouterModule, Routes} from '@angular/router';
@@ -22,7 +22,15 @@ import { FormPersonComponent } from './Componentes/Forms/form-person/form-person
 import { InicioComponent } from './Componentes/Forms/inicio/inicio.component';
 import { LandingPageComponent } from './Componentes/landing-page/landing-page.component';
 import { SkillsComponent } from './Componentes/skills/skills.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { SkillsItemComponent } from './Componentes/skills/skills-item/skills-item.component';
+import { ProyectosComponent } from './Componentes/proyectos/proyectos.component';
+import { FormSkillsComponent } from './Componentes/Forms/form-skills/form-skills.component';
+import{DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
+import { FormSkillItemComponent } from './Componentes/Forms/form-skills/form-skill-item/form-skill-item.component'
+import { CommonModule } from "@angular/common";
+import { FooterComponent } from './Componentes/footer/footer.component';
 
 const routes=[
   {path: '', component: LandingPageComponent},
@@ -32,7 +40,8 @@ const routes=[
   {path: 'studyform', component: FormStudyComponent},
   {path: 'studyform/:id', component: FormStudyComponent},
   {path: 'sessionform', component: InicioComponent},
-  {path: 'personform', component: FormPersonComponent}
+  {path: 'personform', component: FormPersonComponent},
+  {path: 'form-skill', component: FormSkillsComponent}
 
 ]
 @NgModule({
@@ -51,6 +60,11 @@ const routes=[
     FormPersonComponent,
     LandingPageComponent,
     SkillsComponent,
+    SkillsItemComponent,
+    ProyectosComponent,
+    FormSkillsComponent,
+    FormSkillItemComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -61,8 +75,29 @@ const routes=[
     HttpClientModule,
     FontAwesomeModule,
     RouterModule.forRoot(routes),
-
+    NgCircleProgressModule.forRoot({
+      "percent": 100,
+      "radius": 60,
+      "space": -10,
+      "outerStrokeGradient": true,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#4882c2",
+      "outerStrokeGradientStopColor": "#53a9ff",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 10,
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "showBackground": false,
+      "clockwise": true,
+      "startFromZero": false,
+      "lazy": false}),
+      RoundProgressModule,
+      DropDownListModule,
+      CommonModule
+       
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

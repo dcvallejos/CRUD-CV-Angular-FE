@@ -26,7 +26,7 @@ export class ExperienciaComponent implements OnInit {
     ) 
   {}
      ngOnInit(): void {
-    this.EditExpService.getExps().subscribe((exps) =>{
+    this.EditExpService.getExps().subscribe((exps: Exp[]) =>{
       this.exps = exps;
     });
   }
@@ -44,7 +44,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   addExp(exp:Exp){
-    this.EditExpService.addExp(exp).subscribe((exp) =>{
+    this.EditExpService.addExp(exp).subscribe((exp: Exp) =>{
       this.exps.push(exp);
     })
   }

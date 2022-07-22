@@ -1,0 +1,39 @@
+<form 
+    class="formaitems"
+    >
+    
+    <div class="form-control ">
+    <label for="skill">Habilidad</label>
+    <input
+    type="text" 
+    name="skill" 
+    id="skill" 
+    placeholder="Ingresar tu habilidad"
+    [(ngModel)] ="skill!.nombre"
+    >
+    </div>
+
+    <div class="form-control"> 
+        <label for="puntaje">Puntaje</label>
+        <input
+        type="number" 
+        name="puntaje" 
+        id="puntaje" 
+        placeholder="Ingresar el nivel de habilidad del 1 al 10"
+        [(ngModel)] ="skill!.puntaje"
+        >
+</div>
+
+<div class="cross">
+    <fa-icon 
+        title="delete"
+        [icon]="faTrash"
+        [ngStyle]="{'color':'red'}"
+        class="fa-m"
+        (click) = "onDelete(skill)"
+    ></fa-icon>
+</div>
+<div class="cross">
+
+</div>
+</form>

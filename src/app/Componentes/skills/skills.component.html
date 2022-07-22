@@ -1,20 +1,27 @@
 <body>
     <div class="card mat-card">
+        
+        <div class="tituloNedit">
+        
         <h2 class="titulo">Hard & Soft Skills</h2>
-            <app-exp-item 
-                *ngFor="let exp of exps"
-                [exp] = "exp"
-                (onDeleteExp)="deleteExp(exp)"
+        <div class="lapicito"><a title="Edit" href="/form-skill"><fa-icon
+            title="Edit" 
+            class="fa-m" 
+            [ngStyle] = "{'color':'black'}"
+            [icon]="faPencil"
+             >
+             </fa-icon></a></div>
+            </div>
+        <div class="skillcontainer">       
+            <app-skills-item
+                class="text-center skillunit" 
+                *ngFor="let skill of skills"
+                [skill] = "skill"
             >
-        </app-exp-item>
-        <a title="Edit" href="form"> 
-            <fa-icon
-                title="Edit" 
-                class="fa-solid fa-2xl" 
-                [ngStyle] = "{'color':'green'}"
-                [icon]="faPlusCircle"
-            >
-        </fa-icon></a>
+        </app-skills-item>
+        </div>
+
     </div>
+    
 
 </body>

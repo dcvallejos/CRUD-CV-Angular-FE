@@ -14,7 +14,7 @@ export class FormStudyComponent implements OnInit {
     titulo:"",
     logo:"",
     institucion:"",
-    periodo:"",
+    periodo:null!,
     detalles:""};
   id:any;
   editing:boolean=false;  
@@ -57,7 +57,7 @@ export class FormStudyComponent implements OnInit {
       this.study.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
     }
     if(this.editing){
-      this.EditEstudiosService.editStudy(this.study!).subscribe((data)=>{
+      this.EditEstudiosService.editStudy(this.study!).subscribe(()=>{
         this.router.navigateByUrl('home');
         alert("Producto actualizado")
       })

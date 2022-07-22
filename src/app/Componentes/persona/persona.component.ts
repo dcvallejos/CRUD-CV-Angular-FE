@@ -28,6 +28,7 @@ export class PersonaComponent implements OnInit {
     this.EditPerService.getUsers()
     .subscribe((data:User[]) => {
       this.users = data;
+      
       this.person = this.users.find(m=>{return m.id==this.id})});
 
 }
