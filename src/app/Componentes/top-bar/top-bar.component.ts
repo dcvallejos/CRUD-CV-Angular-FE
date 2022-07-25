@@ -15,6 +15,8 @@ export class TopBarComponent implements OnInit {
   id=1;
   editing:boolean=true;  
   userUp!: User[];
+  status? : boolean;
+
   constructor(private editPerService : EditPersonService,private router: Router,) {
     editPerService.getUsers()
       .subscribe((data:User[]) => {
@@ -22,8 +24,19 @@ export class TopBarComponent implements OnInit {
         this.user = this.userUp.find(m=>{return m.id==this.id})});
    }
 
-  ngOnInit(): void {    
+  ngOnInit(): void { 
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+      this.router.navigateByUrl('home')
+    }
+    else{ 
+      this.status = false;
+
+
+    }        
   }
+
+  
 
   exit(){
     window.localStorage.clear();

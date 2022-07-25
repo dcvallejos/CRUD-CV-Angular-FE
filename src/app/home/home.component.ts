@@ -23,8 +23,7 @@ export class HomeComponent implements OnInit {
       }
       else{ 
         this.status = false;
-        alert("Acceso denegado, iniciar sesion")
-        this.router.navigateByUrl('')
+        this.router.navigateByUrl('home')
       }      
          
 

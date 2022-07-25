@@ -7,7 +7,7 @@
     },
     {
       "nombre": "Habilidades ",
-      "puntaje": 5,
+      "puntaje": 8,
       "id": 2
     },
     {
@@ -16,14 +16,9 @@
       "puntaje": 6
     },
     {
-      "nombre": "Empathy",
-      "puntaje": 7,
-      "id": 4
-    },
-    {
-      "id": 5,
-      "nombre": "Empathy",
-      "puntaje": 3
+      "id": 4,
+      "nombre": "Habilidades ",
+      "puntaje": 10
     }
   ],
   "user": [

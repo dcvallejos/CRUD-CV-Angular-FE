@@ -4,13 +4,14 @@
     min-width: 150px !important;
     z-index: 1;
 }
+
 .container{
     max-width: 60rem;
 }
 .row{
     display:flex;
 }
-body{
+.body{
     flex-wrap: wrap;
     min-width: 200px;
     display:block;

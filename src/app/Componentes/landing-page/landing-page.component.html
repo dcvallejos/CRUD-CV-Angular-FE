@@ -1,9 +1,33 @@
-<div>
-    <h1>Bienvenido a mi portfolio</h1>
-    <h3>Para comenzar inicie sesion</h3>
-</div>
-<div>
+<body>
+  <header class="mb-auto">  
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="nav-item" href="http://argentinaprograma.inti.gob.ar"><img class="logos" src="../../../assets/APLogo-20-202.png" title="Logo" ></a>
+    <a class="nav-item" ><img class="logos" src="../../../assets/LogoInti2.png" title="Logo" ></a>
+    <a class="nav-item" ><img class="logos" src="../../../assets/Logoministerio2.png" title="Logo" ></a>
+  
+  
+  </nav>
+</header>
+  <main>
+<div class="containers">
 
-<a href="/sessionform"><button class="btn btn-primary">Iniciar sesion</button></a>
+  <div class="midtext">
+    <div class="textcontent">
+      <h1>Bienvenido a mi portfolio</h1><br>
+      <p>Se le da la bienvenida a este pequeño proyecto en donde podrá obervar una sencilla muestra del funcionamiento de un Curriculum con su correspondiente sistema de ABM de datos y funciones responsive, de forma tal que puede acceder con cualquier dispositivo y manejar el sitio de forma funcional</p>
+      <br>
+    
+    <div class="btnstart">
+      <button type="button" (click)="onGuest()" class="btn btn-form btn-outline-light" >Acceder como invitado</button>
+      <button type="button" (click)="onUser()"class="btn btn-form btn-outline-primary" >Iniciar sesion</button>
+    </div>
 
 </div>
+</div>
+
+</div>
+</main>
+<footer class="footer mt-auto mb-auto">
+  <div class="footertext">Template By Daniel C. Vallejos</div>
+</footer>
+</body>

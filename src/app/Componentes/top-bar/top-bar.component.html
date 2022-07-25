@@ -1,23 +1,55 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand" title="navbar">
-                <div *ngIf=""></div>
+            <a class="navbar-brand" href="http://argentinaprograma.inti.gob.ar" title="a">
+                <img  class="logos"src="../../../assets/APLogo-20-202.png" alt="logo" >
+               
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
+                <div class="navbar-nav">                    
                     <a href="#" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">Profile</a>
                     <a href="#" class="nav-item nav-link">Messages</a>
                     <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link">Login</a>
+                    
+                        <div *ngIf="!this.status">
+                            <a href="/sessionform" class="nav-item nav-link">
+                            <button type="button" class="btn btn-primary">Login</button>
+                        </a>
+                        </div>
+                        
+
+                    
+                    <div *ngIf="this.status"><button (click)="exit()" class="btn btn-danger">Cerrar Sesion</button></div>
                 </div>
             </div>
         </div>
     </nav>
-
+    
+<!--    
+<nav class="navbar navbar-expand-sm navbar-black bg-black" id="1stcard" >
+    <div>
+        <a href="http://argentinaprograma.inti.gob.ar" title="a">
+            <img  class="logos"src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1647226457/APLogo-20-20.png" alt="logo" width="100">
+           
+        </a>
+        <span id="titulo">Portfolio</span>
+    </div>
+    <div class="RS">
+        <a href="#" title="RS">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1200px-2021_Facebook_icon.svg.png" alt="" width="30">
+        </a>
+        <a href="#" title="RS">
+            <img class="logos" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"alt="" width="36">
+        </a>
+        <button class="btn btn-primary">Bienvenido {{user?.nombre}}</button>
+        <button (click)="exit()" class="btn btn-danger">Cerrar Sesion</button>
+    </div>    
+</nav>
+-->
+    
