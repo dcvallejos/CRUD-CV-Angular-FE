@@ -1,4 +1,4 @@
-<div class="body forma" id="myForm">
+<div class="forma body" id="myForm">
     <form 
     [formGroup]="form"
     (ngSubmit)="onSubmit($event)"
@@ -6,54 +6,39 @@
     >
     <div class="form-group">
         <div class="form-control form-control-lg">
-            <label for="puesto">Puesto de trabajo:</label>
+            <label for="nombre">Nombre del proyecto:</label>
             <input
-            formControlName="puesto"  
+            formControlName="nombre"  
             type="text" 
-            name="puesto" 
-            id="puesto" 
-            placeholder="Agregar puesto de trabajo"
+            name="nombre" 
+            id="nombre" 
+            placeholder="Agregar nombre del proyecto"
             
     
             >
-            <div *ngIf="Puesto?.errors && Puesto?.touched">
-                <p *ngIf="Puesto?.hasError('required')" class="error">Ingrese el puesto que ocupo</p>
+            <div *ngIf="Nombre?.errors && Nombre?.touched">
+                <p *ngIf="Nombre?.hasError('required')" class="error">Ingrese el nombre del proyecto</p>
             </div>
         </div>
 
         <div class="form-control form-control-lg">    
-            <label for="empresa">Empresa: </label>
-            <input
-            formControlName="empresa" 
-            type="text" 
-            name="empresa" 
-            id="empresa" 
-            placeholder="Agregar empresa"
-            
-            >
-            <div *ngIf="Empresa?.errors && Empresa?.touched">
-                <p *ngIf="Empresa?.hasError('required')" class="error">Ingrese la empresa en que trabajo</p>
-            </div>
-        </div>
-
-        <div class="form-control form-control-lg">    
-            <label for="logo">Logo empresa: </label>
+            <label for="logo">Foto del proyecto: </label>
             <input 
             formControlName="logo" 
             type="text" 
             name="logo" 
             id="logo" 
-            placeholder="Agregar link logo"
+            placeholder="Agregar link de proyecto"
             >
         </div>
         <div class="form-control form-control-lg">    
-            <label for="periodo">Fecha de inicio: </label>
+            <label for="periodo">Fecha de realizacion: </label>
             <input
             formControlName="periodo" 
             type="date" 
             name="periodo" 
             id="periodo" 
-            placeholder="Agregar periodo"
+            placeholder="Agregar fecha de realizacion"
            
             >
             <div *ngIf="!this.periodovalidator">
@@ -62,16 +47,19 @@
         </div>
 
         <div class="form-control form-control-lg">    
-            <label for="tareas">Tareas: </label>
+            <label for="tareas">Descripcion: </label>
             <textarea 
             formControlName="about" 
             type="text" 
-            name="tareas" 
+            name="about" 
             rows="5"
             maxlength="500"
             class="about" 
-            placeholder="Agregar tareas"
+            placeholder="Relata brevemente de que se trata el proyecto"
             ></textarea>
+            <div *ngIf="About?.errors && About?.touched">
+                <p *ngIf="About?.hasError('required')" class="error">Ingrese una descripcion del proyecto</p>
+            </div>
         </div>
     
         <div class="btn-div"><button type="submit" class="btn-form btn-success">Aceptar</button>

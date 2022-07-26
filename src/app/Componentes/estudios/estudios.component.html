@@ -7,8 +7,9 @@
                 (onDeleteStudy)="deleteStudy(study)"
                 >
         </app-est-item>
-        <a title="Edit" href="studyform"> 
+        <a *ngIf="this.status"title="Edit" > 
             <fa-icon
+                (click)="sendEdit()"
                 title="Edit" 
                 class="fa-solid fa-2xl" 
                 [ngStyle] = "{'color':'green'}"
@@ -19,3 +20,4 @@
     </div>
 
 </body>
+<div id="skills" class="indexer">.</div>

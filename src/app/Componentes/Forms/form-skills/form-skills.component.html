@@ -1,5 +1,5 @@
     <form 
-    class="myForm forma" 
+    class="myForm forma body" 
     (ngSubmit)="onSubmit()">
     
         <div class=""
@@ -9,6 +9,7 @@
         *ngFor="let skill of skills"
         [skill]="skill"
         (onDeleteSkill)="onDelete(skill)"
+        [status]="status"
         >
         </app-form-skill-item>
         

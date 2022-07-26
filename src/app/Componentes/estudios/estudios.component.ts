@@ -3,6 +3,7 @@ import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Study} from '../../Interfaces/study'
 import{EditEstudiosService} from '../../Services/edit-estudios.service'
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estudios',
@@ -14,9 +15,10 @@ export class EstudiosComponent implements OnInit {
   subscription?: Subscription;
   faPlusCircle = faPlusCircle;
   studies: Study[]= [];
+  status: boolean | undefined;
   constructor
   (
-    private EditEstudiosService: EditEstudiosService,
+    private EditEstudiosService: EditEstudiosService, private router: Router
     
     ) 
   {}
@@ -24,6 +26,14 @@ export class EstudiosComponent implements OnInit {
     this.EditEstudiosService.getStudies().subscribe((studies: Study[]) =>{
       this.studies = studies;
     });
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+    }
+    else{ 
+      this.status = false;
+
+
+    }      
   }
   onClick(){
        this.btnClick.emit();
@@ -41,5 +51,7 @@ export class EstudiosComponent implements OnInit {
       this.studies.push(study);
     })
   }
-
+  sendEdit(){
+    this.router.navigateByUrl('/studyform');
+  }
 }

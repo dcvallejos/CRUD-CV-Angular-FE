@@ -1,4 +1,5 @@
 <form 
+    [formGroup]="form"
     class="formaitems"
     >
     
@@ -9,19 +10,31 @@
     name="skill" 
     id="skill" 
     placeholder="Ingresar tu habilidad"
+    formControlName="nombre" 
     [(ngModel)] ="skill!.nombre"
     >
+    <div *ngIf="SkillName?.errors && SkillName?.touched || this.status">
+        <p *ngIf="SkillName?.hasError('required')" class="error">Ingrese el puesto que ocupo</p>
+    </div>
     </div>
 
     <div class="form-control"> 
         <label for="puntaje">Puntaje</label>
         <input
+        formControlName="puntaje" 
         type="number" 
+        step="1"
+        max="10"
+        min="0"
         name="puntaje" 
         id="puntaje" 
         placeholder="Ingresar el nivel de habilidad del 1 al 10"
         [(ngModel)] ="skill!.puntaje"
         >
+        <div *ngIf="Puntaje?.errors && Puntaje?.touched || this.status">
+            <p *ngIf="Puntaje?.hasError('required')" class="error">Ingrese el puesto que ocupo</p>
+            <p *ngIf="Puntaje?.hasError('max') ||Puntaje?.hasError('min')" class="error">Ingrese un numero entre 0 y 10</p>
+        </div>
 </div>
 
 <div class="cross">
@@ -29,11 +42,9 @@
         title="delete"
         [icon]="faTrash"
         [ngStyle]="{'color':'red'}"
-        class="fa-m"
+        class="fa-md"
         (click) = "onDelete(skill)"
     ></fa-icon>
 </div>
-<div class="cross">
 
-</div>
 </form>

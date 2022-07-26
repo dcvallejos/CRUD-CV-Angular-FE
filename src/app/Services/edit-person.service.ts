@@ -32,7 +32,7 @@ export class EditPersonService {
     return this.http.post<User>(this.apiUrl,user);
   }
   editUser(user: User): Observable<User>{
-    const url = `${this.apiUrl}/editar/${user.id}`
+    const url = `${this.apiUrl}/${user.id}`
     return this.http.put<User>(url,user);
   }
 }

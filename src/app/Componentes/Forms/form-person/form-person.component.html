@@ -1,5 +1,6 @@
-<div class="form-popup" id="myForm">
+<div class="forma body" id="myForm">
     <form 
+    [formGroup]="form"
     (ngSubmit)="onSubmit()"
 
     >
@@ -10,9 +11,11 @@
             name="nombre" 
             id="nombre" 
             placeholder="Ingresar nombres y apellidos completos"
-            [(ngModel)] ="user!.nombre"
-    
+            formControlName="nombre"     
             >
+            <div *ngIf="Nombre?.errors && Nombre?.touched">
+                <p *ngIf="Nombre?.hasError('required')" class="error">Ingrese su nombre</p>
+            </div>
         </div>
         <div class="form-control form-control-lg">    
             <label for="empresa">Puesto actual / titulo: </label>
@@ -21,8 +24,11 @@
             name="titulo" 
             id="titulo" 
             placeholder="Inclui aquello con lo que te identifiques"
-            [(ngModel)] ="user!.titulo"
+            formControlName="titulo" 
             >
+            <div *ngIf="Titulo?.errors && Titulo?.touched">
+                <p *ngIf="Titulo?.hasError('required')" class="error">Ingrese su ocupacion o titulo</p>
+            </div>
         </div>
         <div class="form-control form-control-lg">    
             <label for="logo">Foto: </label>
@@ -31,7 +37,7 @@
             name="foto" 
             id="fotografia" 
             placeholder="Agregar el link de tu foto"
-            [(ngModel)] ="user!.foto"
+            formControlName="foto" 
             >
         </div>
 
@@ -44,8 +50,11 @@
             maxlength="500"
             class="about" 
             placeholder="Resumi aqui una pequeña descripcion sobre vos"
-            [(ngModel)] ="user!.about"
+            formControlName="about" 
             ></textarea>
+            <div *ngIf="About?.errors && About?.touched">
+                <p *ngIf="About?.hasError('required')" class="error">Escribi algo sobre vos</p>
+            </div>
         </div>
     
         <div class="btn-div"><button type="submit" class="btn-form btn-success">Aceptar</button>

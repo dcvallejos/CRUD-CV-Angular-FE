@@ -27,10 +27,13 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import { SkillsItemComponent } from './Componentes/skills/skills-item/skills-item.component';
 import { ProyectosComponent } from './Componentes/proyectos/proyectos.component';
 import { FormSkillsComponent } from './Componentes/Forms/form-skills/form-skills.component';
-import{DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
+import  {DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
 import { FormSkillItemComponent } from './Componentes/Forms/form-skills/form-skill-item/form-skill-item.component'
 import { CommonModule } from "@angular/common";
 import { FooterComponent } from './Componentes/footer/footer.component';
+import { ItemProyectoComponent } from './Componentes/proyectos/item-proyecto/item-proyecto.component';
+import { FormProyectComponent } from './Componentes/Forms/form-proyect/form-proyect.component';
+
 
 const routes=[
   {path: '', component: LandingPageComponent},
@@ -41,6 +44,8 @@ const routes=[
   {path: 'studyform/:id', component: FormStudyComponent},
   {path: 'sessionform', component: InicioComponent},
   {path: 'personform', component: FormPersonComponent},
+  {path: 'proyectform', component: FormProyectComponent},
+  {path: 'proyectform/:id', component: FormProyectComponent},
   {path: 'form-skill', component: FormSkillsComponent}
 
 ]
@@ -65,6 +70,8 @@ const routes=[
     FormSkillsComponent,
     FormSkillItemComponent,
     FooterComponent,
+    ItemProyectoComponent,
+    FormProyectComponent,
     
   ],
   imports: [
@@ -91,7 +98,8 @@ const routes=[
       "showBackground": false,
       "clockwise": true,
       "startFromZero": false,
-      "lazy": false}),
+      "lazy": false,
+      "subtitle":""}),
       RoundProgressModule,
       DropDownListModule,
       CommonModule

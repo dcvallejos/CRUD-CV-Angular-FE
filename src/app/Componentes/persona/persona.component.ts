@@ -22,6 +22,7 @@ export class PersonaComponent implements OnInit {
   }
   id=1;
   @Output() onEditUser: EventEmitter<User> = new EventEmitter();
+  status: boolean | undefined;
   constructor(
     private EditPerService: EditPersonService
   ) { 
@@ -34,7 +35,14 @@ export class PersonaComponent implements OnInit {
 }
 
   ngOnInit(): void {
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+    }
+    else{ 
+      this.status = false;
 
+
+    }   
 
   }
   onClick(user:User){

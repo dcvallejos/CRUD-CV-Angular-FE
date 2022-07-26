@@ -1,1 +1,24 @@
-<p>proyectos works!</p>
+<body >
+    <div  class="card mat-card">
+        <h2 class="titulo">Experiencia</h2>
+            <app-item-proyecto 
+                *ngFor="let proy of proys"
+                [proy] = "proy"
+                (onDeleteProy)="deleteProy(proy)"
+            >
+        </app-item-proyecto>
+        <a *ngIf="this.status" title="Edit" > 
+            <fa-icon
+                (click)="sendEdit()"
+                title="Edit" 
+                class="fa-solid fa-2xl" 
+                [ngStyle] = "{'color':'green'}"
+                [icon]="faPlusCircle"
+            >    
+        </fa-icon></a><div id="proy" class="indexer">.</div>
+        
+    </div>    
+
+
+
+</body>

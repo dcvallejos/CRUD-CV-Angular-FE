@@ -1,0 +1,39 @@
+
+.containers{
+    min-height: 962px;
+    min-width: 300px;
+    background-image: linear-gradient(to bottom, black,gray,white);
+    display:flex;
+    flex-direction: column;
+  }
+.btnstart{
+    text-align: center;
+}
+
+  .btn{
+    border:1 px solid;
+  }
+  .col-4{
+    margin-top:50px;
+    max-width: 300px;
+    min-width: 300px;
+  }
+  .row{
+    margin:0px;
+  }
+  .card{
+    
+    background-color: black;
+    color:white;
+    border-radius: 15px!important;
+
+
+  }
+
+.rounded-start{
+    align-items: center!important;
+    display: flex!important;
+    max-height: 38px!important;
+    max-width: 46px!important;
+    text-align: center !important;
+}

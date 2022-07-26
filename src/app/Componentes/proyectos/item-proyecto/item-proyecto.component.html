@@ -3,40 +3,37 @@
         <div class="espacio">
             <img
             class="logoemp"
-            [src]="study.logo" 
+            [src]="proy.logo" 
             alt=""> 
         </div>
         <div  class="desc-exp">
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h4>{{study.titulo}}</h4>
+                        <h4>{{proy.nombre}}</h4>
                     </div>
                     <div *ngIf="this.status" class="col-4">
                         <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
-                         (click)="onClick(study)"
-                         routerLink="/studyform/{{study.id}}"
-
+                         (click)="onClick(proy)"
+                         routerLink="/proyectform/{{proy.id}}"
                          >
                          </fa-icon></a>
-                        <a><fa-icon 
-                            [icon]="faTimes"
-                            [ngStyle]="{'color':'red'}"
-                            class="fa-solid fa-xl"
-                            (click) = "onDelete(study)"
-
-                        ></fa-icon></a>
+                    <fa-icon 
+                    [icon]="faTimes"
+                    [ngStyle]="{'color':'red'}"
+                    class="fa-solid fa-xl"
+                    (click) = "onDelete(proy)"
+                    ></fa-icon>
                     </div>
                 </div>
             </div>
-            <h6>{{study.institucion}}</h6>
-            <p>{{study.periodo| date: 'MM/yyyy'}}</p>
+            <p>{{proy.periodo| date: 'MM/yyyy'}}</p>
             <textarea 
             readonly class="about" 
             title="sobre mi" 
-            rows="4">{{study.detalles}}
+            rows="4">{{proy.about}}
             </textarea>              
         </div>
     </div> 

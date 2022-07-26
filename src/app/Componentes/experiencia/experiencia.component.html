@@ -1,5 +1,5 @@
-<body>
-    <div class="card mat-card">
+<body >
+    <div  class="card mat-card">
         <h2 class="titulo">Experiencia</h2>
             <app-exp-item 
                 *ngFor="let exp of exps"
@@ -7,15 +7,18 @@
                 (onDeleteExp)="deleteExp(exp)"
             >
         </app-exp-item>
-        <a title="Edit" href="form"> 
+        <a *ngIf="this.status" title="Edit" > 
             <fa-icon
+                (click)="sendEdit()"
                 title="Edit" 
                 class="fa-solid fa-2xl" 
                 [ngStyle] = "{'color':'green'}"
                 [icon]="faPlusCircle"
-            >
-        </fa-icon></a>
-    </div>
-    <circle-progress></circle-progress>
+            >    
+        </fa-icon></a><div id="study" class="indexer">.</div>
+        
+    </div>    
+
+
 
 </body>

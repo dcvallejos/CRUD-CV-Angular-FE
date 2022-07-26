@@ -3,6 +3,7 @@ import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Exp} from '../../Interfaces/exp'
 import{EditExperienciaService} from '../../Services/edit-experiencia.service'
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,9 +20,11 @@ export class ExperienciaComponent implements OnInit {
   subscription?: Subscription;
   faPlusCircle = faPlusCircle;
   exps: Exp[]= [];
+  status: boolean | undefined;
   constructor
   (
-    private EditExpService: EditExperienciaService,
+    private EditExpService: EditExperienciaService,    private router: Router,
+
    
     ) 
   {}
@@ -29,6 +32,14 @@ export class ExperienciaComponent implements OnInit {
     this.EditExpService.getExps().subscribe((exps: Exp[]) =>{
       this.exps = exps;
     });
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+    }
+    else{ 
+      this.status = false;
+
+
+    }      
   }
   onClick(){
        this.btnClick.emit();
@@ -49,5 +60,8 @@ export class ExperienciaComponent implements OnInit {
     })
   }
   toggleAddExp(){
+  }
+  sendEdit(){
+    this.router.navigateByUrl('/form');
   }
 }

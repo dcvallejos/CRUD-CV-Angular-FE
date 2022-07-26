@@ -1,14 +1,19 @@
             <circle-progress class="skills"
-                [percent]="skill.puntaje!"
+                [percent]="skill.puntaje!*10"
                 [title]="skill.nombre!"
-                [titleFontSize]="'hola'"
+                [titleFontSize]="'12'"
                 [radius]="50"
-                [outerStrokeWidth]="10"
+                [outerStrokeWidth]="5"
                 [innerStrokeWidth]="5"
-                [outerStrokeColor]="'#78C000'"
-                [innerStrokeColor]="'#C7E596'"
+                [outerStrokeColor]="'blue'"
+                [innerStrokeColor]="'white'"
                 [animation]="true"
                 [animationDuration]="300"
+                [titleFontWeight]= "'600'"
+                [titleFontSize]="'16'"
+                [responsive]="true"
+                [showSubtitle]="false"
+   
                 
             >
             </circle-progress>

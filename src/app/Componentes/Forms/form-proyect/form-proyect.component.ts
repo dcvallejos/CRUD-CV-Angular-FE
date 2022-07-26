@@ -1,32 +1,29 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
-import {Exp} from '../../../Interfaces/exp';
-import { EditExperienciaService } from 'src/app/Services/edit-experiencia.service';
+import {Proy} from '../../../Interfaces/proyect';
+import { EditProyectoService } from 'src/app/Services/edit-proyecto.service';
 import{Router,ActivatedRoute} from '@angular/router';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-
-
 @Component({
-  selector: 'app-form-exp',
-  templateUrl: './form-exp.component.html',
-  styleUrls: ['./form-exp.component.css']
+  selector: 'app-form-proyect',
+  templateUrl: './form-proyect.component.html',
+  styleUrls: ['./form-proyect.component.css']
 })
-export class FormExpComponent implements OnInit {
-  exp?: Exp = {
-    puesto:"",
+export class FormProyectComponent implements OnInit {
+  proy?: Proy = {
+    nombre:"",
     logo:"",
-    empresa:"",
     periodo:null!,
-    tareas:""};
+    about:""};
   id:any;
   editing:boolean=false;  
-  expUp!: Exp[];
+  proyUp!: Proy[];
   status? : boolean;
   form: UntypedFormGroup;
   periodovalidator?:boolean = true;
   
   constructor(
-    private editExpService: EditExperienciaService,
+    private editProyService: EditProyectoService,
     private formBuilder: UntypedFormBuilder,
 
     private router: Router,
@@ -35,10 +32,9 @@ export class FormExpComponent implements OnInit {
 
       this.form = this.formBuilder.group({
         id: ['',[]],
-        puesto: ['',[Validators.required]],
-        empresa: ['',[Validators.required]],
-        about: ['',[]],
-        logo: ['',[]],
+        nombre: ['',[Validators.required]],
+        about: ['',[Validators.required]],
+        logo: ['',[Validators.required]],
         periodo: ['',[Validators.required]]        
       })
       //LocalStorage checking
@@ -54,11 +50,11 @@ export class FormExpComponent implements OnInit {
       this.id = this.activatedRoute.snapshot.params['id']
       if(this.id){
         this.editing = true;
-        this.editExpService.getExps()
-        .subscribe((data:Exp[]) =>{
-          this.expUp = data;
-          this.exp = this.expUp.find((m)=>{return m.id==this.id})
-          this.form.patchValue(this.exp!);
+        this.editProyService.getProys()
+        .subscribe((data:Proy[]) =>{
+          this.proyUp = data;
+          this.proy = this.proyUp.find((m)=>{return m.id==this.id})
+          this.form.patchValue(this.proy!);
           })
           }
           else{
@@ -69,26 +65,26 @@ export class FormExpComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(event: Event){    
-      if(!this.PeriodoStart?.value){
+      if(!this.Periodo?.value){
         this.periodovalidator =false;      
       }
       if(this.form.valid){
-        if(this.exp?.logo===""){
-          this.exp.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
+        if(this.proy?.logo===""){
+          this.proy.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
         }
         if(this.editing){
-          this.exp=this.form.value;
-          this.editExpService.editExp(this.exp!).subscribe(()=>{
+          this.proy=this.form.value;
+          this.editProyService.editProy(this.proy!).subscribe(()=>{
             this.router.navigateByUrl('home');
-            alert("Producto actualizado")
+            alert("Proyecto actualizado")
           })
         } 
         else{
-          this.exp=this.form.value;
-          this.editExpService.addExp(this.exp!)
+          this.proy=this.form.value;
+          this.editProyService.addProy(this.proy!)
             .subscribe(() => {
               this.router.navigateByUrl('home')
-              alert('Producto guardado')})
+              alert('Proyecto guardado')})
         } 
       }
     else{
@@ -99,27 +95,22 @@ export class FormExpComponent implements OnInit {
     this.router.navigateByUrl('home')
   }
 
-  get Puesto(){
-    return this.form.get('puesto');
-
-  }
-  get Empresa(){
-    return this.form.get('empresa');
+  get Nombre(){
+    return this.form.get('nombre');
 
   }
   get Logo(){
     return this.form.get('logo');
-
   }
+
   get About(){
     return this.form.get('about');
 
   }
-  get PeriodoStart(){
+  get Periodo(){
     return this.form.get('periodo');
 
   }
 
 
 }
-

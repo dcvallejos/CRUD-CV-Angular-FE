@@ -1,72 +1,92 @@
 {
   "skill": [
     {
-      "id": 1,
-      "nombre": "Daniel Carlos Vallejos",
+      "id": 5,
+      "nombre": "Javascript",
+      "puntaje": 9
+    },
+    {
+      "id": 6,
+      "nombre": "HTML",
+      "puntaje": 8
+    },
+    {
+      "id": 7,
+      "nombre": "CSS",
       "puntaje": 7
     },
     {
-      "nombre": "Habilidades ",
-      "puntaje": 8,
-      "id": 2
+      "id": 8,
+      "nombre": "Typescript ",
+      "puntaje": 8
     },
     {
-      "id": 3,
-      "nombre": "Habilidades ",
-      "puntaje": 6
-    },
-    {
-      "id": 4,
-      "nombre": "Habilidades ",
-      "puntaje": 10
+      "id": 9,
+      "nombre": "Java",
+      "puntaje": 7
     }
   ],
   "user": [
     {
       "id": 1,
-      "email": "daniel@yoprogramo.com",
-      "password": "123456",
-      "nombre": "Daniel Carlos Vallejos",
+      "nombre": "Daniel Vallejos",
       "titulo": "Programador Fullstack nivel corcho",
-      "about": "Soy un programador que tambien es utilizable para tapar botellas de vino con sus equiparables capacidades de programacion",
       "foto": "https://media-exp1.licdn.com/dms/image/C4E03AQFtBk2_Qug1DA/profile-displayphoto-shrink_200_200/0/1601244586807?e=2147483647&v=beta&t=rtiGUawSDcMh7_kLYITnNS5cyKrksQe1GW59v8yhay0",
-      "status": false
+      "about": "Soy un programador que tambien es utilizable para tapar botellas de vino con sus equiparables capacidades de programacionssdsd",
+      "email": "daniel@yoprogramo.com",
+      "password": "123456"
+    }
+  ],
+  "proy": [
+    {
+      "id": 1,
+      "nombre": "dsw",
+      "about": "asdadsad",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "periodo": "2022-07-12"
+    },
+    {
+      "id": 2,
+      "nombre": "Daniel",
+      "about": "fgbdcbdfgbdfbfdgbgfd",
+      "logo": "https://media-exp1.licdn.com/dms/image/C4E03AQFtBk2_Qug1DA/profile-displayphoto-shrink_200_200/0/1601244586807?e=2147483647&v=beta&t=rtiGUawSDcMh7_kLYITnNS5cyKrksQe1GW59v8yhay0",
+      "periodo": "2022-07-15"
     }
   ],
   "exps": [
     {
+      "id": 1,
       "puesto": "Administrativo",
-      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
       "empresa": "HONEYWELL",
-      "periodo": "2022-07-23",
-      "tareas": "Hice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logisticaHice laburo de logis",
-      "id": 1
+      "about": "",
+      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
+      "periodo": "2022-07-23"
     },
     {
       "puesto": "Administrativo",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
       "empresa": "asdasd",
       "periodo": "2022-07-20",
-      "tareas": "dfhstagaggfads",
+      "tareas": "hfghrf",
       "id": 2
     }
   ],
   "study": [
     {
-      "titulo": "adsasdasdasd",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "institucion": "asdadsad",
-      "periodo": "2022-07-13",
-      "detalles": "dsgfsdfgsdg",
-      "id": 3
-    },
-    {
-      "titulo": "asd",
-      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
+      "id": 1,
+      "titulo": "Desarrollador Fullstack Jr.",
+      "logo": "https://png.pngtree.com/template/20191014/ourlarge/pngtree-real-estate-business-logo-template-building-property-development-and-construction-logo-image_317796.jpg",
       "institucion": "asdadsadsa",
       "periodo": "2022-07-16",
-      "detalles": "asdsadas",
-      "id": 4
+      "detalles": "adsasd"
+    },
+    {
+      "id": 2,
+      "titulo": "Programador Fullstack nivel corcho",
+      "logo": "https://png.pngtree.com/template/20191014/ourlarge/pngtree-real-estate-business-logo-template-building-property-development-and-construction-logo-image_317796.jpg",
+      "institucion": "asdadsad",
+      "periodo": "2022-07-02",
+      "detalles": "dsads"
     }
   ]
 }

@@ -1,9 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+
+.error{
+    color:red;
+    font-weight: 500;
+    font-size: 12px;
+}
 .navbar{
     min-width: 150px !important;
     z-index: 1;
+    position:sticky;
+    top:0;
 }
+
 
 .container{
     max-width: 60rem;
@@ -48,9 +57,14 @@
     width:100%;
     min-width: 30px;
     padding-left: 10px;
-    margin:auto;
+    padding-right: 10px;
+    margin:10px;
+    
 }
 
+.logos{
+    max-height:70px;
+}
 .espacio{
     max-width:20%;
     display: fluid;
@@ -158,9 +172,10 @@ fa-icon{
 
 .skillcontainer{
 display: grid;  
-grid-template-columns: repeat(auto-fill, minmax(12rem,1fr));
-gap:5px;
+grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
+gap:40px;
 grid-auto-rows:8rem;
+margin-bottom:25px;
 }
 
 .tituloNedit{
@@ -240,4 +255,9 @@ form .btn {
 .session-form {
     min-width: 200px;
 }
-
+.indexer{
+    color:transparent;
+}
+.fa-m::before{
+    content:none;
+}

@@ -4,13 +4,16 @@
         <div class="tituloNedit">
         
         <h2 class="titulo">Hard & Soft Skills</h2>
-        <div class="lapicito"><a title="Edit" href="/form-skill"><fa-icon
+        <div *ngIf="this.status" class="lapicito">
+            
+            <fa-icon
+            (click)="sendEdit()"
             title="Edit" 
             class="fa-m" 
             [ngStyle] = "{'color':'black'}"
             [icon]="faPencil"
              >
-             </fa-icon></a></div>
+             </fa-icon></div>
             </div>
         <div class="skillcontainer">       
             <app-skills-item

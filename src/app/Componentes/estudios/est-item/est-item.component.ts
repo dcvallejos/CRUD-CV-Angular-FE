@@ -15,9 +15,18 @@ export class EstItemComponent implements OnInit {
   @Input() study!: Study;
   @Output() onDeleteStudy: EventEmitter<Study> = new EventEmitter();
   @Output() onEditStudy: EventEmitter<Study> = new EventEmitter();
+  status: boolean | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+    }
+    else{ 
+      this.status = false;
+
+
+    }        
   }
   onDelete(study:Study){
     this.onDeleteStudy.emit(study);

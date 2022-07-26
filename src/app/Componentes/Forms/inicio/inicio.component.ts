@@ -69,4 +69,8 @@ constructor(
     this.router.navigateByUrl('')
   }
 
+  onGuest(){
+    this.router.navigateByUrl('/home');
+
+  }
 }

@@ -1,6 +1,7 @@
-<div class="form-popup" id="myForm">
+<div class="forma body" id="myForm">
     <form 
-    (ngSubmit)="onSubmit()"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit($event)"
 
     >
         <div class="form-control form-control-lg">
@@ -10,9 +11,11 @@
             name="titulo" 
             id="titulo" 
             placeholder="Agregar Titulo"
-            [(ngModel)] ="study!.titulo"
-    
+            formControlName="titulo"   
             >
+            <div *ngIf="Titulo?.errors && Titulo?.touched">
+                <p *ngIf="Titulo?.hasError('required')" class="error">Ingrese titulo del curso/carrera </p>
+            </div>
         </div>
         <div class="form-control form-control-lg">    
             <label for="institucion">Institucion: </label>
@@ -21,8 +24,11 @@
             name="institucion" 
             id="institucion" 
             placeholder="Agregar institucion"
-            [(ngModel)] ="study!.institucion"
+            formControlName="institucion"
             >
+            <div *ngIf="Institucion?.errors && Institucion?.touched">
+                <p *ngIf="Institucion?.hasError('required')" class="error">Ingrese la institucion donde hizo el curso/carrera </p>
+            </div>
         </div>
         <div class="form-control form-control-lg">    
             <label for="logo">Logo institucion: </label>
@@ -31,7 +37,7 @@
             name="logo" 
             id="logo" 
             placeholder="Agregar link logo"
-            [(ngModel)] ="study!.logo"
+            formControlName="logo"
             >
         </div>
         <div class="form-control form-control-lg">    
@@ -41,8 +47,11 @@
             name="periodo" 
             id="periodo" 
             placeholder="Agregar periodo"
-            [(ngModel)] ="study!.periodo "
+            formControlName="periodo"
             >
+            <div *ngIf="!this.periodovalidator">
+                <p class="error" >Ingrese la fecha de inicio</p>
+            </div>
         </div>
         <div class="form-control form-control-lg">    
             <label for="detalles">Detalles: </label>
@@ -53,7 +62,7 @@
             maxlength="500"
             class="about" 
             placeholder="Agregar detalles"
-            [(ngModel)] ="study!.detalles"
+            formControlName="detalles"
             ></textarea>
         </div>
     

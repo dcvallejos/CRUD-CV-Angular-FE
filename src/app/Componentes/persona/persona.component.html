@@ -25,7 +25,7 @@
                 <div class="col-8 ">
                     <h3>Sobre mi</h3>
                 </div>
-                <div class="col-4 lapizperson">
+                <div *ngIf="this.status" class="col-4 lapizperson">
                     <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
@@ -42,3 +42,4 @@
         rows="4">{{person?.about}}</textarea>
     </div>
 </div>
+<div id="exp" class="indexer">.</div>

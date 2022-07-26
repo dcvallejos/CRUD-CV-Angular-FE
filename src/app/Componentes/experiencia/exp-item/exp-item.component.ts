@@ -14,9 +14,18 @@ export class ExpItemComponent implements OnInit {
   @Input() exp!: Exp;
   @Output() onDeleteExp: EventEmitter<Exp> = new EventEmitter();
   @Output() onEditExp: EventEmitter<Exp> = new EventEmitter();
+  status: boolean | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+    }
+    else{ 
+      this.status = false;
+
+
+    }        
   }
   onDelete(exp:Exp){
     this.onDeleteExp.emit(exp);

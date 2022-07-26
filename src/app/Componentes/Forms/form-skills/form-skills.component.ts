@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { UntypedFormGroup, FormControl, Validators, UntypedFormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { UntypedFormGroup, FormControl, Validators, UntypedFormBuilder} from '@angular/forms';
 
 import{EditSkillService} from '../../../Services/edit-skill.service'
 import { Skill } from 'src/app/Interfaces/skill';
@@ -9,6 +9,7 @@ import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { FormSkillItemComponent } from './form-skill-item/form-skill-item.component';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -27,28 +28,58 @@ export class FormSkillsComponent implements OnInit {
     "nombre": '',
     "puntaje": null!
   }
+  puntajeValid:boolean=true;
+  nombreValid:boolean=true;
 
   @Input() skill!: Skill;
+  status: boolean;
 
 
   constructor(    private router: Router,private formBuilder: UntypedFormBuilder, private editSkillService: EditSkillService) {
     this.editSkillService.getSkills().subscribe((skills: Skill[]) =>{
       this.skills = skills;
-    })
+    });
+    if(window.localStorage.getItem('statusquo')){
+      this.status = true;
+    }
+    else{ 
+      this.status = false;
+      alert("Acceso denegado, iniciar sesion")
+      this.router.navigateByUrl('')
+    }     
    }
 
   ngOnInit(): void {   
   }
 
   onSubmit(){
-    for(let skill of this.skills){
-      this.editSkillService.editSkill(skill).subscribe();
+
+    this.Validator();
+    if(!this.status){
+      alert("faltan datos");}
+      else{
+        for(let skill of this.skills){
+          this.editSkillService.editSkill(skill).subscribe();
+        }
+        alert("Skills guardadas");
+        this.router.navigateByUrl('home')
+      }
+    } 
+
+    Validator(){
+      for(let skill of this.skills){
+        if(!skill.nombre || !skill.puntaje || skill.puntaje>10){
+          this.status=false;
+          }    
+          else{this.status=true}
 
     }
-    alert("Skills guardadas");
-    this.router.navigateByUrl('home')
+
+   
+  
   }
 
+  
   onNew(skill:Skill){
     this.skill=this.skillnw;
     this.editSkillService.addSkill(skill).subscribe((skill: Skill) =>{
@@ -68,20 +99,7 @@ export class FormSkillsComponent implements OnInit {
     this.router.navigateByUrl('home')
   }
 
-  get Puntaje(){
-    return this.form.get('puntaje');
-  }
-
-  get SkillName(){
-    return this.form.get('nombreSkill');
-  }
-
-  get PuntajeValid(){
-    return this.Puntaje?.touched && !this.Puntaje?.valid;
-  }
-
-  get SkillNameValid(){
-    return false;
-  }
 
 }
+  
+
