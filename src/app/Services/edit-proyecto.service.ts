@@ -11,7 +11,7 @@ const httpOptions ={
   providedIn: 'root'
 })
 export class EditProyectoService {
-  private apiUrl = ' http://localhost:3000/proy'
+  private apiUrl = ' https://vast-shore-26100.herokuapp.com/proy'
 
   constructor(
     private http:HttpClient,

@@ -12,7 +12,7 @@ const httpOptions ={
 })
 export class EditSkillService {
 
-  private apiUrl = 'http://localhost:3000/skill'
+  private apiUrl = 'https://vast-shore-26100.herokuapp.com/skill'
 
   constructor(private http:HttpClient,) { }
   getSkills(): Observable<Skill[]>{

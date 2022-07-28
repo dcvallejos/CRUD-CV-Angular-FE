@@ -11,7 +11,7 @@ const httpOptions ={
 })
 export class EditExperienciaService {
 
-  private apiUrl = ' http://localhost:3000/exps'
+  private apiUrl = ' https://vast-shore-26100.herokuapp.com/exps'
 
   constructor(
     private http:HttpClient,
