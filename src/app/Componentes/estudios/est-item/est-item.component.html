@@ -37,10 +37,10 @@
                     <p>Desde:  <b>{{study.periodo| date: 'MM/yyyy'}}</b></p>
                 </div>
                 
-                <div class="col-1 ">-</div>
+                <div class="col-1 "><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
                 <div class="col-5">
-                    <p *ngIf = "study.periodoEnd! > 1"><b>{{study.periodoEnd| date: 'MM/yyyy'}}</b></p>    
-                    <p *ngIf= "study.periodoEnd"><b>{{study.periodoEnd}}</b></p>
+                    <p *ngIf = "study.periodoEnd!"><b>{{study.periodoEnd| date: 'MM/yyyy'}}</b></p>    
+                    <p *ngIf= "!study.periodoEnd"><b>actualidad</b></p>
                 </div>
             </div>
             <textarea 

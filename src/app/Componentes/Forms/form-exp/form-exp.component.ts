@@ -42,7 +42,7 @@ export class FormExpComponent implements OnInit {
         about: ['',[]],
         logo: ['',[]],
         periodo: ['',[Validators.required]],
-        periodoEnd: ['',[Validators.required]]
+        periodoEnd: ['',[]]
       })
 
 
@@ -64,37 +64,43 @@ export class FormExpComponent implements OnInit {
           this.expUp = data;
           this.exp = this.expUp.find((m)=>{return m.id==this.id});
           this.form.patchValue(this.exp!);
-          if(this.exp?.periodoEnd === 'la actualidad'){
+          if(!this.exp?.periodoEnd){
             this.alt = false;
           }
           })
           }
           else{
             this.editing=false;
-          }        
+          }
       }
 
   ngOnInit(): void {}
 
   disableSending() {
-    this.alt=!this.alt  
-    this.form.get('periodoEnd')!.patchValue(null);  
-    this.periodovalidator =false;    
+    this.alt=!this.alt;  
+    this.addValidators()
     }
 
-  onSubmit(event: Event){    
+    addValidators(){
+      this.PeriodoEnd!.patchValue(null);  
+      this.PeriodoEnd!.setValidators([Validators.required]);
+      this.form.updateValueAndValidity();
+    }
+
+    removeValidators(){
+      this.PeriodoEnd!.clearValidators();
+      this.PeriodoEnd!.setValidators(null);
+      this.form.updateValueAndValidity();
+    }
     
-      if(!this.PeriodoStart?.value){
+      onSubmit(){    
+        console.log(this.PeriodoEnd)
+        this.removeValidators();
+        console.log(this.PeriodoEnd)
+        
+      if(!this.PeriodoStart || !this.PeriodoEnd){
         this.periodovalidator =false;      
       }
-      if(!this.alt){
-        this.form.get('periodoEnd')!.patchValue('la actualidad');
-      }
-      else if(!this.PeriodoEnd && this.alt){
-        this.form.get('periodoEnd')!.patchValue(null);
-        this.periodovalidator =false;  
-      }
-
 
       if(this.form.valid){
         if(this.exp?.logo===""){
@@ -137,8 +143,8 @@ export class FormExpComponent implements OnInit {
   }
   get About(){
     return this.form.get('about');
-
   }
+
   get PeriodoStart(){
     return this.form.get('periodo');
 

@@ -42,7 +42,7 @@ export class FormStudyComponent implements OnInit {
         logo: ['',[]],
         institucion: ['',[Validators.required]],
         periodo: ['',[Validators.required]],
-        periodoEnd: ['',[Validators.required]],
+        periodoEnd: ['',[]],
         detalles: ['',[]]        
       })
 
@@ -64,43 +64,50 @@ export class FormStudyComponent implements OnInit {
           this.studyUp = data;
           this.study = this.studyUp.find((m)=>{return m.id==this.id});
           this.form.patchValue(this.study!);
-          if(this.study?.periodoEnd === 'la actualidad'){
-            this.alt = false;          }          
-          
+          if(!this.study?.periodoEnd){
+            this.alt = false;
+          }
           })
           }
           else{
             this.editing=false;
-          }        
+          }
       }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   disableSending() {
-    this.alt=!this.alt 
-    this.form.get('periodoEnd')!.patchValue(null);  
-    this.periodovalidator =false;       
+    this.alt=!this.alt;  
+    this.addValidators()
     }
 
-  onSubmit(event: Event){ 
+    addValidators(){
+      this.PeriodoEnd!.patchValue(null);  
+      this.PeriodoEnd!.setValidators([Validators.required]);
+      this.form.updateValueAndValidity();
+    }
+
+    removeValidators(){
+      this.PeriodoEnd!.clearValidators();
+      this.PeriodoEnd!.setValidators(null);
+      this.form.updateValueAndValidity();
+    }
     
-    if(!this.PeriodoStart?.value){
+      onSubmit(){    
+        console.log(this.PeriodoEnd)
+        this.removeValidators();
+        console.log(this.PeriodoEnd)
+        
+      if(!this.PeriodoStart || !this.PeriodoEnd){
         this.periodovalidator =false;      
       }
-      if(!this.alt){
-        this.form.get('periodoEnd')!.patchValue('la actualidad');
-      }
-      else if(!this.PeriodoEnd && this.alt){
-        this.form.get('periodoEnd')!.patchValue(null);
-        this.periodovalidator =false;  
-      }
 
-    if(this.study?.logo===""){
-      this.study.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
-    }
+
+
     if(this.form.valid){
-      this.periodovalidator =true; 
+      if(this.study?.logo===""){
+        this.study.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
+      }
     if(this.editing){
       this.study=this.form.value;
       this.EditEstudiosService.editStudy(this.study!).subscribe(()=>{

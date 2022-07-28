@@ -1,7 +1,7 @@
 <div class="body forma" id="myForm">
     <form 
     [formGroup]="form"
-    (ngSubmit)="onSubmit($event)"
+    (ngSubmit)="onSubmit()"
 
     >
     <div class="form-group">
@@ -78,6 +78,7 @@
                     id="periodoEnd" 
                     placeholder="Agregar periodo f"   
                     >
+                    
                     <div *ngIf="!this.periodovalidator">
                         <p class="error" >Ingrese la fecha de fin</p>
                     </div>

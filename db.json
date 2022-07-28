@@ -56,42 +56,60 @@
   ],
   "exps": [
     {
-      "id": 1,
-      "puesto": "Administrativo",
-      "empresa": "HONEYWELL",
-      "about": "",
-      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
-      "periodo": "2022-07-23",
-      "periodoEnd": "2022-07-09"
-    },
-    {
       "id": 2,
       "puesto": "Administrativo",
       "empresa": "asdasd",
       "about": "",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
       "periodo": "2022-07-20",
-      "periodoEnd": "2022-07-06"
+      "periodoEnd": null
+    },
+    {
+      "id": 3,
+      "puesto": "Administrativo",
+      "empresa": "HONEYWELL",
+      "about": "",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "periodo": "2022-07-03",
+      "periodoEnd": null
+    },
+    {
+      "id": 4,
+      "puesto": "Administrativo",
+      "empresa": "HONEYWELL",
+      "about": "",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "periodo": "2022-07-02",
+      "periodoEnd": null
     }
   ],
   "study": [
-    {
-      "id": 1,
-      "titulo": "Desarrollador Fullstack Jr.",
-      "logo": "https://png.pngtree.com/template/20191014/ourlarge/pngtree-real-estate-business-logo-template-building-property-development-and-construction-logo-image_317796.jpg",
-      "institucion": "asdadsadsa",
-      "periodo": "2022-07-16",
-      "periodoEnd": "la actualidad",
-      "detalles": "adsasd"
-    },
     {
       "id": 2,
       "titulo": "Programador Fullstack nivel corcho",
       "logo": "https://png.pngtree.com/template/20191014/ourlarge/pngtree-real-estate-business-logo-template-building-property-development-and-construction-logo-image_317796.jpg",
       "institucion": "asdadsad",
       "periodo": "2022-07-02",
-      "periodoEnd": "la actualidad",
+      "periodoEnd": "2022-07-08",
       "detalles": "dsads"
+    },
+    {
+      "id": 3,
+      "titulo": "Desarrollador Fullstack Jr.",
+      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
+      "institucion": "asdadsadsa",
+      "periodo": "2022-07-02",
+      "periodoEnd": null,
+      "detalles": ""
+    },
+    {
+      "id": 4,
+      "titulo": "Programador Fullstack nivel corcho",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "institucion": "asdadsad",
+      "periodo": "2022-07-01",
+      "periodoEnd": null,
+      "detalles": ""
     }
   ]
 }

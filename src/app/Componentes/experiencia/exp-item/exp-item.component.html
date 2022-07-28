@@ -35,10 +35,10 @@
                     <p>Desde:  <b>{{exp.periodo| date: 'MM/yyyy'}}</b></p>
                 </div>
                 
-                <div class="col-1 ">-</div>
+                <div class="col-1 "><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
                 <div class="col-5">
-                    <p *ngIf = "exp.periodoEnd! > 1"><b>{{exp.periodoEnd| date: 'MM/yyyy'}}</b></p>    
-                    <p *ngIf= "exp.periodoEnd"><b>{{exp.periodoEnd}}</b></p>
+                    <p *ngIf = "exp.periodoEnd!"><b>{{exp.periodoEnd| date: 'MM/yyyy'}}</b></p>    
+                    <p *ngIf= "!exp.periodoEnd"><b>actualidad</b></p>
                 </div>
             </div>
             <textarea 
