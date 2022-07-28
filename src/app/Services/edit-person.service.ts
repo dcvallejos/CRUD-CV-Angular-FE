@@ -10,7 +10,7 @@ const httpOptions ={
   providedIn: 'root'
 })
 export class EditPersonService {
-  private apiUrl = 'https://vast-shore-26100.herokuapp.com/user'
+  private apiUrl = 'https://vast-shore-26100.herokuapp.com/personas'
 
   constructor(
     private http:HttpClient,
