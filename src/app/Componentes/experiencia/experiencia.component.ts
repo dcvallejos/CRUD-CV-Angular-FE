@@ -31,6 +31,7 @@ export class ExperienciaComponent implements OnInit {
      ngOnInit(): void {
     this.EditExpService.getExps().subscribe((exps: Exp[]) =>{
       this.exps = exps;
+
     });
     if(window.localStorage.getItem('statusquo')){
       this.status = true;

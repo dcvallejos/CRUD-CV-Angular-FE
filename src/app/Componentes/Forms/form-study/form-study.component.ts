@@ -17,6 +17,7 @@ export class FormStudyComponent implements OnInit {
     logo:"",
     institucion:"",
     periodo:null!,
+    periodoEnd:null!,
     detalles:""};
   id:any;
   editing:boolean=false;  
@@ -24,7 +25,7 @@ export class FormStudyComponent implements OnInit {
   status? : boolean;
   periodovalidator?:boolean = true;
   form: UntypedFormGroup;
-
+  alt?:boolean = true;
   
   
   constructor(
@@ -40,7 +41,8 @@ export class FormStudyComponent implements OnInit {
         titulo: ['',[Validators.required]],
         logo: ['',[]],
         institucion: ['',[Validators.required]],
-        periodo: ['',[]],
+        periodo: ['',[Validators.required]],
+        periodoEnd: ['',[Validators.required]],
         detalles: ['',[]]        
       })
 
@@ -62,7 +64,8 @@ export class FormStudyComponent implements OnInit {
           this.studyUp = data;
           this.study = this.studyUp.find((m)=>{return m.id==this.id});
           this.form.patchValue(this.study!);
-          
+          if(this.study?.periodoEnd === 'la actualidad'){
+            this.alt = false;          }          
           
           })
           }
@@ -73,16 +76,31 @@ export class FormStudyComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  disableSending() {
+    this.alt=!this.alt 
+    this.form.get('periodoEnd')!.patchValue(null);  
+    this.periodovalidator =false;       
+    }
+
   onSubmit(event: Event){ 
     
     if(!this.PeriodoStart?.value){
-      this.periodovalidator =false;
-      
-    }
+        this.periodovalidator =false;      
+      }
+      if(!this.alt){
+        this.form.get('periodoEnd')!.patchValue('la actualidad');
+      }
+      else if(!this.PeriodoEnd && this.alt){
+        this.form.get('periodoEnd')!.patchValue(null);
+        this.periodovalidator =false;  
+      }
+
     if(this.study?.logo===""){
       this.study.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
     }
     if(this.form.valid){
+      this.periodovalidator =true; 
     if(this.editing){
       this.study=this.form.value;
       this.EditEstudiosService.editStudy(this.study!).subscribe(()=>{
@@ -127,5 +145,8 @@ export class FormStudyComponent implements OnInit {
     return this.form.get('periodo');
  
   }
+  get PeriodoEnd(){
+    return this.form.get('periodoEnd');
 
+  }
 }

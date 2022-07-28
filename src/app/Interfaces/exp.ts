@@ -4,5 +4,6 @@ export interface Exp{
     logo:string;
     empresa: string;
     periodo: number;
+    periodoEnd?: number | string;
     tareas: string;
     }

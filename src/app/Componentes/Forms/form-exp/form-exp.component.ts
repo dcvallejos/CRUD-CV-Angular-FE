@@ -17,6 +17,7 @@ export class FormExpComponent implements OnInit {
     logo:"",
     empresa:"",
     periodo:null!,
+    periodoEnd:null!,
     tareas:""};
   id:any;
   editing:boolean=false;  
@@ -24,6 +25,7 @@ export class FormExpComponent implements OnInit {
   status? : boolean;
   form: UntypedFormGroup;
   periodovalidator?:boolean = true;
+  alt?:boolean = true;
   
   constructor(
     private editExpService: EditExperienciaService,
@@ -39,8 +41,11 @@ export class FormExpComponent implements OnInit {
         empresa: ['',[Validators.required]],
         about: ['',[]],
         logo: ['',[]],
-        periodo: ['',[Validators.required]]        
+        periodo: ['',[Validators.required]],
+        periodoEnd: ['',[Validators.required]]
       })
+
+
       //LocalStorage checking
       if(window.localStorage.getItem('statusquo')){
         this.status = true;
@@ -57,8 +62,11 @@ export class FormExpComponent implements OnInit {
         this.editExpService.getExps()
         .subscribe((data:Exp[]) =>{
           this.expUp = data;
-          this.exp = this.expUp.find((m)=>{return m.id==this.id})
+          this.exp = this.expUp.find((m)=>{return m.id==this.id});
           this.form.patchValue(this.exp!);
+          if(this.exp?.periodoEnd === 'la actualidad'){
+            this.alt = false;
+          }
           })
           }
           else{
@@ -68,10 +76,26 @@ export class FormExpComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  disableSending() {
+    this.alt=!this.alt  
+    this.form.get('periodoEnd')!.patchValue(null);  
+    this.periodovalidator =false;    
+    }
+
   onSubmit(event: Event){    
+    
       if(!this.PeriodoStart?.value){
         this.periodovalidator =false;      
       }
+      if(!this.alt){
+        this.form.get('periodoEnd')!.patchValue('la actualidad');
+      }
+      else if(!this.PeriodoEnd && this.alt){
+        this.form.get('periodoEnd')!.patchValue(null);
+        this.periodovalidator =false;  
+      }
+
+
       if(this.form.valid){
         if(this.exp?.logo===""){
           this.exp.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
@@ -117,6 +141,10 @@ export class FormExpComponent implements OnInit {
   }
   get PeriodoStart(){
     return this.form.get('periodo');
+
+  }
+  get PeriodoEnd(){
+    return this.form.get('periodoEnd');
 
   }
 

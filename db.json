@@ -43,6 +43,7 @@
       "nombre": "dsw",
       "about": "asdadsad",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "link": "http://localhost:4200",
       "periodo": "2022-07-12"
     },
     {
@@ -60,15 +61,17 @@
       "empresa": "HONEYWELL",
       "about": "",
       "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
-      "periodo": "2022-07-23"
+      "periodo": "2022-07-23",
+      "periodoEnd": "2022-07-09"
     },
     {
+      "id": 2,
       "puesto": "Administrativo",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
       "empresa": "asdasd",
+      "about": "",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
       "periodo": "2022-07-20",
-      "tareas": "hfghrf",
-      "id": 2
+      "periodoEnd": "2022-07-06"
     }
   ],
   "study": [
@@ -78,6 +81,7 @@
       "logo": "https://png.pngtree.com/template/20191014/ourlarge/pngtree-real-estate-business-logo-template-building-property-development-and-construction-logo-image_317796.jpg",
       "institucion": "asdadsadsa",
       "periodo": "2022-07-16",
+      "periodoEnd": "la actualidad",
       "detalles": "adsasd"
     },
     {
@@ -86,6 +90,7 @@
       "logo": "https://png.pngtree.com/template/20191014/ourlarge/pngtree-real-estate-business-logo-template-building-property-development-and-construction-logo-image_317796.jpg",
       "institucion": "asdadsad",
       "periodo": "2022-07-02",
+      "periodoEnd": "la actualidad",
       "detalles": "dsads"
     }
   ]

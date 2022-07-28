@@ -30,7 +30,17 @@
                 </div>
             </div>
             <h6>{{exp.empresa}}</h6>
-            <p>{{exp.periodo| date: 'MM/yyyy'}}</p>
+            <div class="row rowperiod">
+                <div class="col-2">
+                    <p>Desde:  <b>{{exp.periodo| date: 'MM/yyyy'}}</b></p>
+                </div>
+                
+                <div class="col-1 ">-</div>
+                <div class="col-5">
+                    <p *ngIf = "exp.periodoEnd! > 1"><b>{{exp.periodoEnd| date: 'MM/yyyy'}}</b></p>    
+                    <p *ngIf= "exp.periodoEnd"><b>{{exp.periodoEnd}}</b></p>
+                </div>
+            </div>
             <textarea 
             readonly class="about" 
             title="sobre mi" 

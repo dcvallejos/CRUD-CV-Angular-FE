@@ -40,17 +40,39 @@
             formControlName="logo"
             >
         </div>
-        <div class="form-control form-control-lg">    
-            <label for="periodo">Periodo: </label>
-            <input
-            type="date" 
-            name="periodo" 
-            id="periodo" 
-            placeholder="Agregar periodo"
-            formControlName="periodo"
-            >
-            <div *ngIf="!this.periodovalidator">
-                <p class="error" >Ingrese la fecha de inicio</p>
+        <div class="divDates ">
+            <div class="form-control form-control-lg">    
+                <label for="periodo">Periodo: </label>
+                <input
+                type="date" 
+                name="periodo" 
+                id="periodo" 
+                placeholder="Agregar periodo"
+                formControlName="periodo"
+                >
+                <div *ngIf="!this.periodovalidator">
+                    <p class="error" >Ingrese la fecha de inicio</p>
+                </div>
+            </div>
+
+            <div class="form-control form-control-lg endDate">   
+                <div class="form-check">
+                    <label for="flexCheckDefault">Trabajo actual</label>
+                    <input type="checkbox" title="checker" (click)="disableSending()" id="checker" [checked]="!this.alt">
+            </div> 
+                <div *ngIf="this.alt">
+                    <label for="periodo">Fecha de fin: </label>
+                    <input                
+                        formControlName="periodoEnd" 
+                        type="date" 
+                        name="periodo" 
+                        id="periodoEnd" 
+                        placeholder="Agregar periodo f"   
+                        >
+                    <div *ngIf="!this.periodovalidator">
+                        <p class="error" >Ingrese la fecha de fin</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-control form-control-lg">    

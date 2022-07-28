@@ -10,10 +10,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">                    
-                    <a class="nav-item nav-link active" onClick="document.getElementById('exp').scrollIntoView({behavior: 'smooth'});">Experiencia</a>
+                    <a class="nav-item nav-link active" onClick="window.scrollTo(0, 0) " data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><i class="fas fa-home" ></i></a>
+                    <a class="nav-item nav-link " onClick="document.getElementById('exp').scrollIntoView({behavior: 'smooth'});">Experiencia</a>
                     <a class="nav-item nav-link" onClick="document.getElementById('study').scrollIntoView({behavior: 'smooth'});" >Estudios</a>
                     <a class="nav-item nav-link" onClick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'});">Skills</a>
-                    <a class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+                    <a class="nav-item nav-link" onClick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'});">Proyectos</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     

@@ -4,4 +4,5 @@ export interface Proy{
     about:string;
     periodo: number;    
     logo: string; 
+    link?: string; 
     }

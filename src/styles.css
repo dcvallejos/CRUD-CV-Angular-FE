@@ -61,6 +61,14 @@
     margin:10px;
     
 }
+.col-3{
+    display: flex !important;
+    width: 26%!important;
+    justify-content: center;
+}
+.rowperiod{
+
+}
 
 .logos{
     max-height:70px;
@@ -82,6 +90,26 @@ ul {
     margin: 0;
     padding: 0;
   }
+.divDates{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left:0px;
+}
+.endDate{
+    justify-content: flex-end;
+}
+.form-check{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 24px;
+    text-align: center;
+}
+.form-check input{
+    margin-left: 0px !important;
+}
 
 .mat-card{
     border-radius: 32px ;
@@ -93,6 +121,18 @@ ul {
     padding-left:0px;
     min-width: 70px;
     
+}
+.col-2{
+    text-align: left;
+    width: 22%;
+    min-width: 87px;
+}
+.col-1{
+    width:10%;
+    text-align: center;
+}
+.col-5{
+    min-width:106px !important;    
 }
 .plusCirclediv{
     text-align: center;
@@ -112,13 +152,12 @@ fa-icon{
     outline: none;
     padding: 3px ;
 }
-.col-2{
-    display:fluid;
-}
+
 .foto{
     position:relative;
     bottom:80px;
 }
+
 
 #persona{
     width:100%;
@@ -166,7 +205,7 @@ fa-icon{
 
 .col-4{
    
-    text-align: right;
+    text-align: left;
  
 }
 
@@ -208,6 +247,7 @@ margin-bottom:25px;
     display:flex;
     align-items:center;
     padding:15px;
+    
 }
 .btn-div{
     text-align: center;

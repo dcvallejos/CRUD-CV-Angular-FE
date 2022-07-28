@@ -35,6 +35,7 @@ export class FormProyectComponent implements OnInit {
         nombre: ['',[Validators.required]],
         about: ['',[Validators.required]],
         logo: ['',[Validators.required]],
+        link: ['',[]],
         periodo: ['',[Validators.required]]        
       })
       //LocalStorage checking
@@ -101,6 +102,9 @@ export class FormProyectComponent implements OnInit {
   }
   get Logo(){
     return this.form.get('logo');
+  }
+  get Link(){
+    return this.form.get('link');
   }
 
   get About(){

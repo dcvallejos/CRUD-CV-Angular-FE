@@ -4,6 +4,7 @@ export interface Study{
         logo: string;
         titulo: string;
         periodo: number;   
+        periodoEnd?: number | string;
         detalles: string;         
     
     }
