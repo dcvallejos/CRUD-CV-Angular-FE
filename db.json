@@ -56,31 +56,34 @@
   ],
   "exps": [
     {
-      "id": 2,
-      "puesto": "Administrativo",
+      "id": 1,
+      "puesto": "asd",
       "empresa": "asdasd",
       "about": "",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "periodo": "2022-07-20",
-      "periodoEnd": null
+      "periodo": "2022-07-02",
+      "periodoEnd": "",
+      "index": 0
+    },
+    {
+      "id": 2,
+      "puesto": "asd",
+      "empresa": "HONEYWELL",
+      "about": "",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
+      "periodo": "2022-06-29",
+      "periodoEnd": null,
+      "index": 1
     },
     {
       "id": 3,
-      "puesto": "Administrativo",
-      "empresa": "HONEYWELL",
+      "puesto": "fdsafaff",
+      "empresa": "asd",
       "about": "",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "periodo": "2022-07-03",
-      "periodoEnd": null
-    },
-    {
-      "id": 4,
-      "puesto": "Administrativo",
-      "empresa": "HONEYWELL",
-      "about": "",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU",
-      "periodo": "2022-07-02",
-      "periodoEnd": null
+      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Honeywell-Emblem.png",
+      "periodo": "2022-07-08",
+      "periodoEnd": null,
+      "index": 2
     }
   ],
   "study": [

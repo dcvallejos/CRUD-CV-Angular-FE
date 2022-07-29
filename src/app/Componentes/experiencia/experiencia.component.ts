@@ -33,7 +33,7 @@ export class ExperienciaComponent implements OnInit {
   {}
      ngOnInit(): void {
     this.EditExpService.getExps().subscribe((exps: Exp[]) =>{
-      this.exps = exps;
+      this.exps = exps.sort(function(a,b){return a.index! - b.index!});
 
     });
     if(window.localStorage.getItem('statusquo')){
@@ -47,7 +47,7 @@ export class ExperienciaComponent implements OnInit {
   }
   onSavePos(){
     for(let exp of this.exps){
-      exp.id = this.exps.indexOf(exp);
+      exp.index = this.exps.indexOf(exp);
       this.EditExpService.editExp(exp).subscribe();
   }
   }

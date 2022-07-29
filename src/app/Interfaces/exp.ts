@@ -6,4 +6,5 @@ export interface Exp{
     periodo: number;
     periodoEnd?: number;
     tareas: string;
+    index?: number;
     }

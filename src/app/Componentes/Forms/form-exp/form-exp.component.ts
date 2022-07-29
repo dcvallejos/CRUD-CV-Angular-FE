@@ -18,9 +18,12 @@ export class FormExpComponent implements OnInit {
     empresa:"",
     periodo:null!,
     periodoEnd:null!,
-    tareas:""};
+    tareas:"",
+    index:null!
+  };
   id:any;
-  editing:boolean=false;  
+  editing:boolean=false; 
+  exps: Exp[]= []; 
   expUp!: Exp[];
   status? : boolean;
   form: UntypedFormGroup;
@@ -72,6 +75,7 @@ export class FormExpComponent implements OnInit {
           else{
             this.editing=false;
           }
+          this.editExpService.getExps().subscribe((data:Exp[]) =>{this.exps =data})
       }
 
   ngOnInit(): void {}
@@ -115,6 +119,7 @@ export class FormExpComponent implements OnInit {
         } 
         else{
           this.exp=this.form.value;
+          this.exp!.index = this.exps.length +1;
           this.editExpService.addExp(this.exp!)
             .subscribe(() => {
               this.router.navigateByUrl('home')
