@@ -33,6 +33,8 @@ import { CommonModule } from "@angular/common";
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { ItemProyectoComponent } from './Componentes/proyectos/item-proyecto/item-proyecto.component';
 import { FormProyectComponent } from './Componentes/Forms/form-proyect/form-proyect.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 const routes=[
@@ -102,7 +104,9 @@ const routes=[
       "subtitle":""}),
       RoundProgressModule,
       DropDownListModule,
-      CommonModule
+      CommonModule,
+      BrowserAnimationsModule,
+      DragDropModule
        
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

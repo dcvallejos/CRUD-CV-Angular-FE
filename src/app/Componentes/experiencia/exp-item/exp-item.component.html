@@ -1,5 +1,5 @@
 
-    <div class="tops">
+    <div class="tops" >
         <div class="espacio">
             <img
             class="logoemp"
@@ -10,13 +10,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h4>{{exp.puesto}}</h4>
+                        <h4>{{index}} - {{exp.puesto}} </h4>
+                        
                     </div>
+                    
                     <div *ngIf="this.status" class="col-4">
                         <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
-                         (click)="onClick(exp)"
                          routerLink="/form/{{exp.id}}"
                          >
                          </fa-icon></a>

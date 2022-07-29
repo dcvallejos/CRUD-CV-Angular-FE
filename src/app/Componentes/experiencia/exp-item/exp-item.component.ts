@@ -12,10 +12,12 @@ export class ExpItemComponent implements OnInit {
   faPencil = faPencil;
   faTimes = faTimes;
   @Input() exp!: Exp;
+  @Input() index! : number;
   @Output() onDeleteExp: EventEmitter<Exp> = new EventEmitter();
-  @Output() onEditExp: EventEmitter<Exp> = new EventEmitter();
+  
   status: boolean | undefined;
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
     if(window.localStorage.getItem('statusquo')){
@@ -23,14 +25,16 @@ export class ExpItemComponent implements OnInit {
     }
     else{ 
       this.status = false;
-
-
-    }        
+    }    
   }
+
+  emmiter(){
+      let index = this.index;
+      console.log(index);
+  }
+
   onDelete(exp:Exp){
     this.onDeleteExp.emit(exp);
   }
-  onClick(exp:Exp){
-    this.onEditExp.emit(exp);;
-  }
+
 }

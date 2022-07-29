@@ -1,9 +1,11 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, ViewChild } from '@angular/core';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Exp} from '../../Interfaces/exp'
 import{EditExperienciaService} from '../../Services/edit-experiencia.service'
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ExpItemComponent } from './exp-item/exp-item.component';
 
 
 @Component({
@@ -21,6 +23,7 @@ export class ExperienciaComponent implements OnInit {
   faPlusCircle = faPlusCircle;
   exps: Exp[]= [];
   status: boolean | undefined;
+  indice? : number;
   constructor
   (
     private EditExpService: EditExperienciaService,    private router: Router,
@@ -42,8 +45,11 @@ export class ExperienciaComponent implements OnInit {
 
     }      
   }
-  onClick(){
-       this.btnClick.emit();
+  onSavePos(){
+    for(let exp of this.exps){
+      exp.id = this.exps.indexOf(exp);
+      this.EditExpService.editExp(exp).subscribe();
+  }
   }
   deleteExp(exp:Exp){
     this.EditExpService.deleteExp(exp).subscribe(
@@ -60,9 +66,20 @@ export class ExperienciaComponent implements OnInit {
       this.exps.push(exp);
     })
   }
-  toggleAddExp(){
-  }
+
   sendEdit(){
     this.router.navigateByUrl('/form');
   }
+
+  drop(e : CdkDragDrop <any>){
+    moveItemInArray(this.exps,e.previousIndex,e.currentIndex);
+    console.log(this.exps[e.currentIndex])
+
+
+
+
+
+    
+  }
+
 }

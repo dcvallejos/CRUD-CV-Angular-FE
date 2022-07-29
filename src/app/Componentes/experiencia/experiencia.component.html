@@ -1,12 +1,20 @@
 <body >
+    <div cdkDropList (cdkDropListDropped)="drop($event)">
     <div  class="card mat-card">
         <h2 class="titulo">Experiencia</h2>
+        <button class="btn btn-primary" (click)="onSavePos()">Guardar posicion</button>
             <app-exp-item 
-                *ngFor="let exp of exps"
+                *ngFor="let exp of exps;  let index=index ;"
+                [index] = "index"
                 [exp] = "exp"
                 (onDeleteExp)="deleteExp(exp)"
-            >
+                cdkDragLockAxis="y"
+                cdkDrag
+                (indexs)="indice"
+                >
+
         </app-exp-item>
+        
         <a *ngIf="this.status" title="Edit" > 
             <fa-icon
                 (click)="sendEdit()"
@@ -18,7 +26,7 @@
         </fa-icon></a><div id="study" class="indexer">.</div>
         
     </div>    
-
+</div>
 
 
 </body>

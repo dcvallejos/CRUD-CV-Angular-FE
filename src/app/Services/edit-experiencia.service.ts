@@ -11,7 +11,7 @@ const httpOptions ={
 })
 export class EditExperienciaService {
 
-  private apiUrl = ' https://vast-shore-26100.herokuapp.com/exps'
+  private apiUrl = ' https://vast-shore-26100.herokuapp.com/experiencia'
 
   constructor(
     private http:HttpClient,
@@ -35,6 +35,7 @@ export class EditExperienciaService {
     const url = `${this.apiUrl}/${exp.id}`
     return this.http.put<Exp>(url,exp);
   }
+
 }
 
 
