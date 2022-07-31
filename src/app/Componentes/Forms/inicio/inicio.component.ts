@@ -70,6 +70,8 @@ constructor(
   }
 
   onGuest(){
+    window.localStorage.clear();
+    alert("Bienvenido")
     this.router.navigateByUrl('/home');
 
   }
