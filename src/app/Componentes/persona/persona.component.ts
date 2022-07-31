@@ -3,6 +3,7 @@ import {faPencil} from '@fortawesome/free-solid-svg-icons';
 import{User} from '../../Interfaces/person'
 import{EditPersonService} from '../../Services/edit-person.service'
 import { Subscription } from 'rxjs';
+import { TopBarComponent } from '../top-bar/top-bar.component';
 
 
 
@@ -22,7 +23,8 @@ export class PersonaComponent implements OnInit {
   }
   id=1;
   @Output() onEditUser: EventEmitter<User> = new EventEmitter();
-  status: boolean | undefined;
+  @Input() editOK?: boolean;
+  status: boolean | undefined;  
   constructor(
     private EditPerService: EditPersonService
   ) { 

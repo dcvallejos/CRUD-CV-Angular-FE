@@ -1,8 +1,8 @@
 
     <div class="tops">
         <div class="espacio">
-            <a title="link proyecto" href="{{proy.link}}" target="_blank" rel="noopener noreferrer"><img
-            class="logoemp"
+            <a class ="proyA" title="link proyecto" href="{{proy.link}}" target="_blank" rel="noopener noreferrer"><img
+            class="logoemp logoproy"
             [src]="proy.logo" 
             alt=""> </a>
         </div>
@@ -10,9 +10,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h4>{{proy.nombre}}</h4>
+                        <h2><b>{{proy.nombre}}</b></h2>
                     </div>
-                    <div *ngIf="this.status" class="col-4">
+                    <div *ngIf="this.editOK" class="col-4">
                         <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"

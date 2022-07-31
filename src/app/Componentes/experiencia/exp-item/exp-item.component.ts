@@ -12,7 +12,8 @@ export class ExpItemComponent implements OnInit {
   faPencil = faPencil;
   faTimes = faTimes;
   @Input() exp!: Exp;
-  @Input() index! : number;
+  @Input() editOK?: boolean;
+
   @Output() onDeleteExp: EventEmitter<Exp> = new EventEmitter();
   
   status: boolean | undefined;
@@ -28,10 +29,7 @@ export class ExpItemComponent implements OnInit {
     }    
   }
 
-  emmiter(){
-      let index = this.index;
-      console.log(index);
-  }
+
 
   onDelete(exp:Exp){
     this.onDeleteExp.emit(exp);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/Interfaces/person';
 import { EditPersonService } from 'src/app/Services/edit-person.service';
@@ -13,10 +13,12 @@ export class TopBarComponent implements OnInit {
     nombre:"",
     };
   id=1;
-  editing:boolean=true;  
+  editor:boolean=false;
+  editing:boolean=true;    
+  
   userUp!: User[];
   status? : boolean;
-
+    @Output() onEditor = new EventEmitter<boolean>();
   constructor(private editPerService : EditPersonService,private router: Router,) {
     editPerService.getUsers()
       .subscribe((data:User[]) => {
@@ -42,7 +44,10 @@ export class TopBarComponent implements OnInit {
     window.localStorage.clear();
     alert("Sesion finalizada, redirigiendo al inicio")
     this.router.navigate([''])
-
+  }
+  edit(){
+    this.editor=!this.editor
+    this.onEditor.emit(this.editor);
 
   }
 

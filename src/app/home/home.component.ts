@@ -10,7 +10,7 @@ import { EditPersonService } from '../Services/edit-person.service';
 })
 export class HomeComponent implements OnInit {
   status? : boolean;
-  
+  editor? : boolean;
 
 
   constructor(    private editPerService: EditPersonService,
@@ -29,10 +29,10 @@ export class HomeComponent implements OnInit {
 
     }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
-
-
+  onEditor($event:any){
+    this.editor = $event;
   }
 
 }

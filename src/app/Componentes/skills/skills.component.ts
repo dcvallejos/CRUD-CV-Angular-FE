@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Skill } from 'src/app/Interfaces/skill';
 import{EditSkillService} from '../../Services/edit-skill.service'
@@ -16,6 +16,7 @@ export class SkillsComponent implements OnInit {
   skills :Skill[] = [];
   faPencil = faPencil;
   status: boolean | undefined;
+  @Input() editOK?: boolean;
 
   constructor(private editSkillService: EditSkillService,private router: Router) {
     this.editSkillService.getSkills().subscribe((skills: Skill[]) =>{

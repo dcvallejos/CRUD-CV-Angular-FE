@@ -29,7 +29,7 @@ constructor(
     this.editPerService.getUsers()
     .subscribe((data:User[]) => {
       this.userUp = data;
-      this.user = this.userUp.find(m=>{return m.id==this.id});console.log(this.user)});
+      this.user = this.userUp.find(m=>{return m.id==this.id})});
     }
 
   ngOnInit(): void {}

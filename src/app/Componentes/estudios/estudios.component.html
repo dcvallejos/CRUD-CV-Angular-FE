@@ -1,13 +1,24 @@
 <body>
+    <div cdkDropList (cdkDropListDropped)="drop($event)">
     <div class="card mat-card">
-        <h2 class="titulo">Estudios</h2>
+        <div class="titulo">
+            <h1 class="titulo"><b>Estudios</b></h1>
+            <div class="lapicito">
+            <button *ngIf="editOK" class="btn btn-primary" (click)="onSavePos()">Guardar posicion</button></div></div>
+
             <app-est-item 
+            [ngClass]="{'mover':editOK}"
+
                 *ngFor="let study of studies"
                 [study] = "study"
                 (onDeleteStudy)="deleteStudy(study)"
+                cdkDragLockAxis="y"
+                cdkDrag
+                [editOK]="editOK"
+                [cdkDragDisabled]="!editOK"
                 >
         </app-est-item>
-        <a *ngIf="this.status"title="Edit" > 
+        <a *ngIf="this.editOK"title="Edit" > 
             <fa-icon
                 (click)="sendEdit()"
                 title="Edit" 
@@ -19,5 +30,5 @@
         </fa-icon></a>
         <div id="skills" class="indexer">.</div>
     </div>
-
+</div>
 </body>

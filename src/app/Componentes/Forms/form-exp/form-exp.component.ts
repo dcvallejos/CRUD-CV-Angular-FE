@@ -19,7 +19,7 @@ export class FormExpComponent implements OnInit {
     periodo:null!,
     periodoEnd:null!,
     tareas:"",
-    index:null!
+    indice:null!
   };
   id:any;
   editing:boolean=false; 
@@ -42,7 +42,7 @@ export class FormExpComponent implements OnInit {
         id: ['',[]],
         puesto: ['',[Validators.required]],
         empresa: ['',[Validators.required]],
-        about: ['',[]],
+        tareas: ['',[]],
         logo: ['',[]],
         periodo: ['',[Validators.required]],
         periodoEnd: ['',[]]
@@ -107,11 +107,12 @@ export class FormExpComponent implements OnInit {
       }
 
       if(this.form.valid){
-        if(this.exp?.logo===""){
-          this.exp.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
-        }
+
         if(this.editing){
-          this.exp=this.form.value;          
+          this.exp=this.form.value;      
+          if(this.exp?.logo === ''){
+            this.exp.logo =  "https://cdn-icons-png.flaticon.com/512/4812/4812244.png";
+          }    
           this.editExpService.editExp(this.exp!).subscribe(()=>{
             this.router.navigateByUrl('home');
             alert("Producto actualizado")
@@ -119,7 +120,11 @@ export class FormExpComponent implements OnInit {
         } 
         else{
           this.exp=this.form.value;
-          this.exp!.index = this.exps.length +1;
+          if(this.exp?.logo === ''){
+            this.exp.logo =  "https://cdn-icons-png.flaticon.com/512/4812/4812244.png";
+            }
+          
+          this.exp!.indice = this.exps.length +1;
           this.editExpService.addExp(this.exp!)
             .subscribe(() => {
               this.router.navigateByUrl('home')
@@ -147,7 +152,7 @@ export class FormExpComponent implements OnInit {
 
   }
   get About(){
-    return this.form.get('about');
+    return this.form.get('tareas');
   }
 
   get PeriodoStart(){

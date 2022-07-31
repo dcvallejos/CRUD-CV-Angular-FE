@@ -18,10 +18,13 @@ export class FormStudyComponent implements OnInit {
     institucion:"",
     periodo:null!,
     periodoEnd:null!,
-    detalles:""};
+    detalles:"",
+    indice:null!};
   id:any;
   editing:boolean=false;  
   studyUp!: Study[];
+  studyBox: Study[]= []; 
+
   status? : boolean;
   periodovalidator?:boolean = true;
   form: UntypedFormGroup;
@@ -72,6 +75,8 @@ export class FormStudyComponent implements OnInit {
           else{
             this.editing=false;
           }
+          this.EditEstudiosService.getStudies().subscribe((data:Study[]) =>{this.studyBox =data})
+
       }
 
   ngOnInit(): void {}
@@ -105,11 +110,12 @@ export class FormStudyComponent implements OnInit {
 
 
     if(this.form.valid){
-      if(this.study?.logo===""){
-        this.study.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
-      }
+
     if(this.editing){
       this.study=this.form.value;
+      if(this.study?.logo===""){
+        this.study.logo = "https://static.vecteezy.com/system/resources/thumbnails/005/260/883/small/simple-university-icon-free-vector.jpg"
+      }
       this.EditEstudiosService.editStudy(this.study!).subscribe(()=>{
         this.router.navigateByUrl('home');
         alert("Producto actualizado")
@@ -118,6 +124,10 @@ export class FormStudyComponent implements OnInit {
     } 
     else{
     this.study=this.form.value;
+    this.study!.indice = this.studyBox.length +1;
+    if(this.study?.logo===""){
+      this.study.logo = "https://static.vecteezy.com/system/resources/thumbnails/005/260/883/small/simple-university-icon-free-vector.jpg"
+    }
     this.EditEstudiosService.addStudy(this.study!)
     .subscribe(() => {
       this.router.navigateByUrl('home')

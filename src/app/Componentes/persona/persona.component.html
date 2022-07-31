@@ -14,8 +14,8 @@
         
         
         <div class="fotodescripcion" >
-            <h2 >{{person?.nombre}}</h2> 
-            <h6 >{{person?.titulo}}</h6>
+            <h1 ><b>{{person?.nombre}}</b></h1> 
+            <h4><b>{{person?.titulo}}</b></h4>
         </div>
     </div>
     
@@ -23,9 +23,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-8 ">
-                    <h3>Sobre mi</h3>
+                    <h3><b>Sobre mi</b></h3>
                 </div>
-                <div *ngIf="this.status" class="col-4 lapizperson">
+                <div *ngIf="this.editOK" class="col-4 lapizperson">
                     <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"

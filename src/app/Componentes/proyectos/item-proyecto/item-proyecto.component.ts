@@ -11,6 +11,8 @@ export class ItemProyectoComponent implements OnInit {
   faPencil = faPencil;
   faTimes = faTimes;
   @Input() proy!: Proy;
+  @Input() editOK?: boolean;
+
   @Output() onDeleteProy: EventEmitter<Proy> = new EventEmitter();
   @Output() onEditProy: EventEmitter<Proy> = new EventEmitter();
   status: boolean | undefined;

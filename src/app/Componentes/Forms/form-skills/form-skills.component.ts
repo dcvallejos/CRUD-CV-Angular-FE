@@ -72,18 +72,13 @@ export class FormSkillsComponent implements OnInit {
           this.status=false;
           }    
           else{this.status=true}
+        }  
+    } 
 
-    }
+  onNew(){ 
+    this.editSkillService.addSkill(this.skillnw!).subscribe((skill: Skill) =>{
+      this.skills.push(skill!);    this.constructor();
 
-   
-  
-  }
-
-  
-  onNew(skill:Skill){
-    this.skill=this.skillnw;
-    this.editSkillService.addSkill(skill).subscribe((skill: Skill) =>{
-      this.skills.push(skill);
      })
   }
 

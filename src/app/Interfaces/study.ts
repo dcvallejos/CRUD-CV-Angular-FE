@@ -5,6 +5,7 @@ export interface Study{
         titulo: string;
         periodo: number;   
         periodoEnd?: number ;
-        detalles: string;         
+        detalles: string;    
+        indice? : number;     
     
     }

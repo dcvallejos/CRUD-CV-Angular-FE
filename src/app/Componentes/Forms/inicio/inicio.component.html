@@ -32,10 +32,10 @@
                                     class="form-control" 
                                     formControlName="password" 
                                     placeholder="Ingrese password"
-                            />
-                            <div *ngIf="Password?.errors && Password?.touched">
-                                <p *ngIf="Password?.hasError('required')" class="error">La contraseña es requerida</p>
-                            </div>
+                            />         
+                        </div>
+                        <div *ngIf="Password?.errors && Password?.touched">
+                            <p *ngIf="Password?.hasError('required')" class="error">La contraseña es requerida</p>
                         </div>
 
                         

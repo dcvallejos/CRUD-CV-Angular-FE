@@ -1,9 +1,10 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Study} from '../../Interfaces/study'
 import{EditEstudiosService} from '../../Services/edit-estudios.service'
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-estudios',
@@ -16,6 +17,7 @@ export class EstudiosComponent implements OnInit {
   faPlusCircle = faPlusCircle;
   studies: Study[]= [];
   status: boolean | undefined;
+  @Input() editOK?: boolean;
   constructor
   (
     private EditEstudiosService: EditEstudiosService, private router: Router
@@ -24,7 +26,7 @@ export class EstudiosComponent implements OnInit {
   {}
      ngOnInit(): void {
     this.EditEstudiosService.getStudies().subscribe((studies: Study[]) =>{
-      this.studies = studies;
+      this.studies = studies.sort(function(a,b){return a.indice! - b.indice!});;
     });
     if(window.localStorage.getItem('statusquo')){
       this.status = true;
@@ -35,9 +37,15 @@ export class EstudiosComponent implements OnInit {
 
     }      
   }
-  onClick(){
-       this.btnClick.emit();
+
+  onSavePos(){
+    for(let study of this.studies){
+      study.indice = this.studies.indexOf(study);
+      this.EditEstudiosService.editStudy(study).subscribe();
+    }
+    alert("Posicion guardada")
   }
+
   deleteStudy(study:Study){
     this.EditEstudiosService.deleteStudy(study).subscribe(
       () =>{
@@ -53,5 +61,8 @@ export class EstudiosComponent implements OnInit {
   }
   sendEdit(){
     this.router.navigateByUrl('/studyform');
+  }
+  drop(e : CdkDragDrop <any>){
+    moveItemInArray(this.studies,e.previousIndex,e.currentIndex);
   }
 }

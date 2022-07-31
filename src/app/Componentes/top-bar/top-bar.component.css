@@ -1,3 +1,57 @@
 a{
     cursor:pointer;
 }
+
+.personToggler {
+    display:block!important;
+}
+
+
+.navToggled{ 
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+
+.nav-person{
+    margin-left:10px;
+}
+
+@media (min-width: 576px){
+    .navToggled{    
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column!important;
+        align-items: center;
+    }
+    .cancel{
+        max-width: 50%
+    }
+    
+}
+
+@media (min-width: 664px){
+    .navperson {
+
+    margin-right:10px;
+}
+.navToggled{    
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse!important;
+    align-items: center;
+}
+.cancel{
+    max-width: 100%
+}
+
+
+
+}

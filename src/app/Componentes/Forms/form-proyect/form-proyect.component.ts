@@ -34,7 +34,7 @@ export class FormProyectComponent implements OnInit {
         id: ['',[]],
         nombre: ['',[Validators.required]],
         about: ['',[Validators.required]],
-        logo: ['',[Validators.required]],
+        logo: ['',[]],
         link: ['',[]],
         periodo: ['',[Validators.required]]        
       })
@@ -67,9 +67,13 @@ export class FormProyectComponent implements OnInit {
 
   onSubmit(event: Event){    
       if(!this.Periodo?.value){
-        this.periodovalidator =false;      
+        this.periodovalidator =false; 
+        console.log("cuack")     
       }
       if(this.form.valid){
+
+        this.periodovalidator =true;
+        console.log(this.periodovalidator)
         if(this.proy?.logo===""){
           this.proy.logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4VQ5dC2ZMKxY_fQ8VjybwLyIeUPUp0i7kBYEkRyVSLCYav2fI7wprFDOhbiADfFvUm0&usqp=CAU"
         }

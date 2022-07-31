@@ -12,6 +12,16 @@
     position:sticky;
     top:0;
 }
+.mover{
+    cursor:grab;
+    border: 2px lightgray solid;
+    box-shadow: 2px 5px 4px #888888;
+    border-style: outset;
+    margin-bottom: 20px;
+}
+
+
+
 
 
 .container{
@@ -47,18 +57,23 @@
 }
 .desc-exp{
 
-    width: 70%;
-    margin-left:auto;
-    margin-right:12px;
+    width: 75%;
+    margin-left: auto;
+}
 
+.proyA{
+    display: flex;
+}
+.logoproy{
+    width: 85%!important;
 }
 
 .logoemp{
-    width:100%;
+    width:50%;
     min-width: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin:10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: -webkit-fill-available;
     
 }
 .col-3{
@@ -66,17 +81,17 @@
     width: 26%!important;
     justify-content: center;
 }
-.rowperiod{
 
-}
 
 .logos{
     max-height:70px;
 }
 .espacio{
     max-width:20%;
-    display: fluid;
+    display: flex;
     max-height: 25%;
+     min-width: 20%;
+     align-items: flex-start;
 }
 
 .Tareas{
@@ -156,6 +171,10 @@ fa-icon{
 .foto{
     position:relative;
     bottom:80px;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -165,7 +184,7 @@ fa-icon{
     margin:auto;
 }
 #descripcion{
-    width:70%;
+    width:80%;
     margin-top:50px;
     padding-left:15px;
 }
@@ -173,7 +192,7 @@ fa-icon{
     border-radius:100px;
     width:150px;
     display:block;
-    margin:auto;
+
 }
 .fotodescripcion{
     text-align: center;
@@ -201,11 +220,15 @@ fa-icon{
 
 .titulo{
     padding:15px;
+    display:flex;
+    flex-wrap: wrap;
+    
 }
+
 
 .col-4{
    
-    text-align: left;
+    text-align: right;
  
 }
 
@@ -303,3 +326,31 @@ form .btn {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*DRAG AND DROP */
+
+.cdk-drop-list-dragging .cdk-drag {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+  .listItem:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }

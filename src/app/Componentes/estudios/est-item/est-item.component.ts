@@ -13,6 +13,8 @@ export class EstItemComponent implements OnInit {
   faPencil = faPencil;
   faTimes = faTimes;
   @Input() study!: Study;
+  @Input() editOK?: boolean;
+
   @Output() onDeleteStudy: EventEmitter<Study> = new EventEmitter();
   @Output() onEditStudy: EventEmitter<Study> = new EventEmitter();
   status: boolean | undefined;

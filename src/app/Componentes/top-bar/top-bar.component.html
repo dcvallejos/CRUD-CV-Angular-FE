@@ -16,17 +16,27 @@
                     <a class="nav-item nav-link" onClick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'});">Skills</a>
                     <a class="nav-item nav-link" onClick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'});">Proyectos</a>
                 </div>
-                <div class="navbar-nav ms-auto">
-                    
+                <div class="navbar-nav ms-auto">                    
                         <div *ngIf="!this.status">
                             <a href="/sessionform" class="nav-item nav-link">
                             <button type="button" class="btn btn-primary">Login</button>
                         </a>
                         </div>
-                        
-
-                    
-                    <div *ngIf="this.status"><button (click)="exit()" class="btn btn-danger">Cerrar Sesion</button></div>
+                             
+                    <div *ngIf="this.status" class="navToggled">
+                        <div class="toggler">
+                        <button type="button" class="navbar-toggler personToggler"  data-bs-toggle="collapse" data-bs-target="#navbarCollapseMenu" title="navbar">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                        <div class="collapse navbar navperson" id="navbarCollapseMenu">
+                            <a class="nav-item nav-link nav-person cancel"><button (click)="exit()" class="btn btn-danger">Cerrar Sesion</button></a>
+                                <a class="nav-item nav-link nav-person">
+                                    <button *ngIf="this.editor" (click)="edit()" class="btn btn-secondary">Editar</button>
+                                    <button *ngIf="!this.editor" (click)="edit()" class="btn btn-success">Editar</button>
+                                </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

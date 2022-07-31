@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, ViewChild, Input } from '@angular/core';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Exp} from '../../Interfaces/exp'
 import{EditExperienciaService} from '../../Services/edit-experiencia.service'
@@ -24,6 +24,7 @@ export class ExperienciaComponent implements OnInit {
   exps: Exp[]= [];
   status: boolean | undefined;
   indice? : number;
+  @Input() editOK?: boolean;
   constructor
   (
     private EditExpService: EditExperienciaService,    private router: Router,
@@ -33,7 +34,7 @@ export class ExperienciaComponent implements OnInit {
   {}
      ngOnInit(): void {
     this.EditExpService.getExps().subscribe((exps: Exp[]) =>{
-      this.exps = exps.sort(function(a,b){return a.index! - b.index!});
+      this.exps = exps.sort(function(a,b){return a.indice! - b.indice!});
 
     });
     if(window.localStorage.getItem('statusquo')){
@@ -47,9 +48,11 @@ export class ExperienciaComponent implements OnInit {
   }
   onSavePos(){
     for(let exp of this.exps){
-      exp.index = this.exps.indexOf(exp);
+      exp.indice = this.exps.indexOf(exp);
       this.EditExpService.editExp(exp).subscribe();
+      
   }
+  alert("Posicion guardada")
   }
   deleteExp(exp:Exp){
     this.EditExpService.deleteExp(exp).subscribe(
@@ -73,13 +76,6 @@ export class ExperienciaComponent implements OnInit {
 
   drop(e : CdkDragDrop <any>){
     moveItemInArray(this.exps,e.previousIndex,e.currentIndex);
-    console.log(this.exps[e.currentIndex])
-
-
-
-
-
-    
   }
 
 }

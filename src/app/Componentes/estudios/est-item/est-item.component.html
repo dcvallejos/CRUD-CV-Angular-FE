@@ -10,9 +10,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h4>{{study.titulo}}</h4>
+                        <h2><b>{{study.titulo}}</b></h2>
                     </div>
-                    <div *ngIf="this.status" class="col-4">
+                    <div *ngIf="this.editOK" class="col-4">
                         <a><fa-icon
                         class="fa-solid" 
                          [icon]="faPencil"
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <h6>{{study.institucion}}</h6>
+            <h4><b>{{study.institucion}}</b></h4>
             <div class="row rowperiod">
                 <div class="col-2">
                     <p>Desde:  <b>{{study.periodo| date: 'MM/yyyy'}}</b></p>

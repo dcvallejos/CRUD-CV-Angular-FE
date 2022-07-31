@@ -1,9 +1,10 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import{Proy} from '../../Interfaces/proyect'
 import{EditProyectoService} from '../../Services/edit-proyecto.service'
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
@@ -16,6 +17,7 @@ export class ProyectosComponent implements OnInit {
   faPlusCircle = faPlusCircle;
   proys: Proy[]= [];
   status: boolean | undefined;
+  @Input() editOK?: boolean;
   constructor
   (
     private EditProyService: EditProyectoService,    private router: Router,
@@ -57,5 +59,9 @@ export class ProyectosComponent implements OnInit {
 
   sendEdit(){
     this.router.navigateByUrl('/proyectform');
+  }
+
+  drop(e : CdkDragDrop <any>){
+    moveItemInArray(this.proys,e.previousIndex,e.currentIndex);
   }
 }

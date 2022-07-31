@@ -11,7 +11,7 @@
     id="skill" 
     placeholder="Ingresar tu habilidad"
     formControlName="nombre" 
-    [(ngModel)] ="skill!.nombre"
+    [(ngModel)] ="skill.nombre"
     >
     <div *ngIf="SkillName?.errors && SkillName?.touched || this.status">
         <p *ngIf="SkillName?.hasError('required')" class="error">Ingrese el puesto que ocupo</p>
