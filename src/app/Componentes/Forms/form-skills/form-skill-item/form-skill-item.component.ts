@@ -35,11 +35,11 @@ export class FormSkillItemComponent{
   }
 
   get Puntaje(){
-    return this.form.get('puntaje');
+    return this.form.get('puntaje')!;
   }
 
   get SkillName(){
-    return this.form.get('nombre');
+    return this.form.get('nombre')!;
   }
 
   onDelete(skill:Skill){

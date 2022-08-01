@@ -49,16 +49,6 @@ export class FormStudyComponent implements OnInit {
         detalles: ['',[]]        
       })
 
-
-      if(window.localStorage.getItem('statusquo')){
-        this.status = true;
-
-      }
-      else{ 
-        this.status = false;
-        alert("Acceso denegado, iniciar sesion")
-        this.router.navigateByUrl('')
-      }      
       this.id = this.activatedRoute.snapshot.params['id']
       if(this.id){
         this.editing = true;
@@ -99,40 +89,34 @@ export class FormStudyComponent implements OnInit {
     }
     
       onSubmit(){    
-        console.log(this.PeriodoEnd)
         this.removeValidators();
-        console.log(this.PeriodoEnd)
         
       if(!this.PeriodoStart || !this.PeriodoEnd){
         this.periodovalidator =false;      
       }
+      if(this.form.valid){
 
-
-
-    if(this.form.valid){
-
-    if(this.editing){
+      if(this.editing){
+        this.study=this.form.value;
+        if(this.study?.logo===""){
+          this.study.logo = "https://static.vecteezy.com/system/resources/thumbnails/005/260/883/small/simple-university-icon-free-vector.jpg"
+        }
+        this.EditEstudiosService.editStudy(this.study!).subscribe(()=>{
+          this.router.navigateByUrl('home');
+          alert("Producto actualizado")         
+        })
+      } 
+      else{
       this.study=this.form.value;
+      this.study!.indice = this.studyBox.length +1;
       if(this.study?.logo===""){
         this.study.logo = "https://static.vecteezy.com/system/resources/thumbnails/005/260/883/small/simple-university-icon-free-vector.jpg"
       }
-      this.EditEstudiosService.editStudy(this.study!).subscribe(()=>{
-        this.router.navigateByUrl('home');
-        alert("Producto actualizado")
-        
-      })
-    } 
-    else{
-    this.study=this.form.value;
-    this.study!.indice = this.studyBox.length +1;
-    if(this.study?.logo===""){
-      this.study.logo = "https://static.vecteezy.com/system/resources/thumbnails/005/260/883/small/simple-university-icon-free-vector.jpg"
-    }
-    this.EditEstudiosService.addStudy(this.study!)
-    .subscribe(() => {
-      this.router.navigateByUrl('home')
-      alert('Producto guardado')})
-    }
+      this.EditEstudiosService.addStudy(this.study!)
+      .subscribe(() => {
+        this.router.navigateByUrl('home')
+        alert('Producto guardado')})
+      }
     
   }
   else{

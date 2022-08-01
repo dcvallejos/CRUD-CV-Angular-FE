@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import{HttpClient, HttpHeaders} from '@angular/common/http'
 import{Observable, of} from 'rxjs';
-import{User} from '../Interfaces/person'
+import{User} from '../Model/person'
 
 const httpOptions ={
   headers: new HttpHeaders({'Content-Type': 'application/json'})
   }
+
 @Injectable({
   providedIn: 'root'
 })
 export class EditPersonService {
-  private apiUrl = 'https://vast-shore-26100.herokuapp.com/personas'
+  private apiUrl = 'https://young-badlands-34211.herokuapp.com/personas'
 
   constructor(
     private http:HttpClient,

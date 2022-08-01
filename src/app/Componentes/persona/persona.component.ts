@@ -1,6 +1,6 @@
 import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
 import {faPencil} from '@fortawesome/free-solid-svg-icons';
-import{User} from '../../Interfaces/person'
+import{User} from '../../Model/person'
 import{EditPersonService} from '../../Services/edit-person.service'
 import { Subscription } from 'rxjs';
 import { TopBarComponent } from '../top-bar/top-bar.component';

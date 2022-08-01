@@ -19,7 +19,6 @@ import { ExpItemComponent } from './Componentes/experiencia/exp-item/exp-item.co
 import { HomeComponent } from './home/home.component';
 import { FormStudyComponent } from './Componentes/Forms/form-study/form-study.component';
 import { FormPersonComponent } from './Componentes/Forms/form-person/form-person.component';
-import { InicioComponent } from './Componentes/Forms/inicio/inicio.component';
 import { LandingPageComponent } from './Componentes/landing-page/landing-page.component';
 import { SkillsComponent } from './Componentes/skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -35,20 +34,24 @@ import { ItemProyectoComponent } from './Componentes/proyectos/item-proyecto/ite
 import { FormProyectComponent } from './Componentes/Forms/form-proyect/form-proyect.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { LoginComponent } from './Componentes/Login/login/login.component';
+import { interceptorProvider } from './Services/interceptor-service';
+import { AuthGuard } from './Services/auth.guard';
 
 
 const routes=[
   {path: '', component: LandingPageComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'form', component: FormExpComponent},
-  {path: 'form/:id', component: FormExpComponent},
-  {path: 'studyform', component: FormStudyComponent},
-  {path: 'studyform/:id', component: FormStudyComponent},
-  {path: 'sessionform', component: InicioComponent},
-  {path: 'personform', component: FormPersonComponent},
-  {path: 'proyectform', component: FormProyectComponent},
-  {path: 'proyectform/:id', component: FormProyectComponent},
-  {path: 'form-skill', component: FormSkillsComponent}
+  {path: 'form', component: FormExpComponent,canActivate:[AuthGuard]},
+  {path: 'form/:id', component: FormExpComponent,canActivate:[AuthGuard]},
+  {path: 'studyform', component: FormStudyComponent,canActivate:[AuthGuard]},
+  {path: 'studyform/:id', component: FormStudyComponent,canActivate:[AuthGuard]},
+  {path: 'personform', component: FormPersonComponent,canActivate:[AuthGuard]},
+  {path: 'proyectform', component: FormProyectComponent,canActivate:[AuthGuard]},
+  {path: 'proyectform/:id', component: FormProyectComponent,canActivate:[AuthGuard]},
+  {path: 'form-skill', component: FormSkillsComponent,canActivate:[AuthGuard]},
+  {path: 'login', component: LoginComponent}
+
 
 ]
 @NgModule({
@@ -62,7 +65,6 @@ const routes=[
     ExpItemComponent,
     EstItemComponent,
     HomeComponent,
-    InicioComponent,
     FormStudyComponent,
     FormPersonComponent,
     LandingPageComponent,
@@ -74,6 +76,7 @@ const routes=[
     FooterComponent,
     ItemProyectoComponent,
     FormProyectComponent,
+    LoginComponent,
     
   ],
   imports: [
@@ -110,7 +113,8 @@ const routes=[
        
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   onUser(){
-    this.router.navigateByUrl('/sessionform');
+    this.router.navigateByUrl('/login');
   }
   onGuest(){
     this.router.navigateByUrl('/home');

@@ -22,14 +22,13 @@
         </div>
 
         <div class="form-control form-control-lg">    
-            <label for="empresa">Empresa: </label>
+            <label for="empresa">Empresa:</label>
             <input
             formControlName="empresa" 
             type="text" 
             name="empresa" 
             id="empresa" 
-            placeholder="Agregar empresa"
-            
+            placeholder="Agregar empresa"           
             >
             <div *ngIf="Empresa?.errors && Empresa?.touched">
                 <p *ngIf="Empresa?.hasError('required')" class="error">Ingrese la empresa en que trabajo</p>

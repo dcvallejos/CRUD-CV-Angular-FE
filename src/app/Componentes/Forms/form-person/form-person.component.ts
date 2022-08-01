@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
-import {User} from '../../../Interfaces/person';
+import {User} from '../../../Model/person';
 import { EditPersonService } from 'src/app/Services/edit-person.service';
 import{Router,ActivatedRoute} from '@angular/router';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
@@ -39,14 +39,7 @@ export class FormPersonComponent implements OnInit {
         about: ['',[Validators.required]]
       })
 
-      if(window.localStorage.getItem('statusquo')){
-        this.status = true;
-      }
-      else{ 
-        this.status = false;
-        alert("Acceso denegado, iniciar sesion")
-        this.router.navigateByUrl('')
-      }      
+      
       this.editPerService.getUsers()
       .subscribe((data:User[]) => {
         this.userUp = data;

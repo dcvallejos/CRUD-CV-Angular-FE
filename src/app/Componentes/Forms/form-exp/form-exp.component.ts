@@ -49,16 +49,6 @@ export class FormExpComponent implements OnInit {
       })
 
 
-      //LocalStorage checking
-      if(window.localStorage.getItem('statusquo')){
-        this.status = true;
-      }
-      else{ 
-        this.status = false;
-        alert("Acceso denegado, iniciar sesion")
-        this.router.navigateByUrl('')
-      }      
-
       this.id = this.activatedRoute.snapshot.params['id']
       if(this.id){
         this.editing = true;
@@ -98,9 +88,7 @@ export class FormExpComponent implements OnInit {
     }
     
       onSubmit(){    
-        console.log(this.PeriodoEnd)
         this.removeValidators();
-        console.log(this.PeriodoEnd)
         
       if(!this.PeriodoStart || !this.PeriodoEnd){
         this.periodovalidator =false;      

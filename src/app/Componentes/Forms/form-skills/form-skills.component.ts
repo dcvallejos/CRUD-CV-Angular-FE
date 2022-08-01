@@ -32,21 +32,14 @@ export class FormSkillsComponent implements OnInit {
   nombreValid:boolean=true;
 
   @Input() skill!: Skill;
-  status: boolean;
+  status: boolean = false;
 
 
   constructor(    private router: Router,private formBuilder: UntypedFormBuilder, private editSkillService: EditSkillService) {
     this.editSkillService.getSkills().subscribe((skills: Skill[]) =>{
       this.skills = skills;
     });
-    if(window.localStorage.getItem('statusquo')){
-      this.status = true;
-    }
-    else{ 
-      this.status = false;
-      alert("Acceso denegado, iniciar sesion")
-      this.router.navigateByUrl('')
-    }     
+
    }
 
   ngOnInit(): void {   
@@ -77,7 +70,8 @@ export class FormSkillsComponent implements OnInit {
 
   onNew(){ 
     this.editSkillService.addSkill(this.skillnw!).subscribe((skill: Skill) =>{
-      this.skills.push(skill!);    this.constructor();
+      this.skills.push(skill!);
+      window.location.reload();
 
      })
   }
